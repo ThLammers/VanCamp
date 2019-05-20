@@ -1,8 +1,8 @@
 require 'date'
 
 class Booking < ApplicationRecord
-  # belongs_to :van
-  # belongs_to :user
+  belongs_to :van
+  belongs_to :user
 
   validates :checkin, presence: true
   validates :checkout, presence: true
