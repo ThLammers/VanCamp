@@ -14,7 +14,7 @@ rails new \
   --webpack \
   -m https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb \
   VanCamp
-  
+
 # Add to Gemfile (at the end)
 gem 'devise'
 
@@ -24,7 +24,7 @@ bundle install
 # install devise
 rails generate devise:install
 
-# manually changed some files. Follow these two instruction slides: 
+# manually changed some files. Follow these two instruction slides:
 # https://kitt.lewagon.com/karr/lectures/rails/authentication/index.html?title=Authentication#/3/2
 # https://kitt.lewagon.com/karr/lectures/rails/authentication/index.html?title=Authentication#/3/3
 
@@ -33,6 +33,16 @@ rails generate devise User
 
 # migrate database to create users table
 rails db:migrate
+
+# generate vans model with description, location, brand, category, seats, user_id
+rails g model van description location brand category seats:integer user:references
+
+# create database
+rails db:create
+
+# migrate database
+rails db:migrate
 ```
+
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
