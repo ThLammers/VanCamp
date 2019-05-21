@@ -9,3 +9,5 @@
   <li>Owner: <%= @van.user.first_name %></li>
   <li>Price: <%= @van.price_per_day %> €/day</li>
 </ul>
+
+<%= link_to "Book this van", new_van_booking_path(@van)  %>
