@@ -1,0 +1,16 @@
+
+<div class="container">
+
+  <h1>Thomas Forms Playground</h1>
+
+
+  <h2>Search Form to search Vans</h2>
+  <%= form_tag("/vans", method: "get") do %>
+    <%= label_tag(:location, "Search for:") %>
+    <%= text_field_tag(:location) %><br>
+    <%= label_tag(:seats, "seats for:") %>
+    <%= text_field_tag(:seats) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
