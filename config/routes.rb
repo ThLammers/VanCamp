@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'vans/search', to: "vans#search"
-  resources :vans
+  resources :vans do
+    resources :bookings
+  end
 end
