@@ -1,7 +1,7 @@
 class VansController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :search]
   before_action :set_van, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     if params[:commit] == "search"
       seats = search_params[:seats].to_i
@@ -15,7 +15,7 @@ class VansController < ApplicationController
   def search
     # raise
   end
-  
+
   def show
   end
 
@@ -25,6 +25,7 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
+    @van.price_per_day = van_params[:price_per_day].to_i
     @van.user = current_user
     if @van.save
       redirect_to @van
@@ -49,7 +50,7 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :location)
+    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :price_per_day)
   end
 
   def search_params

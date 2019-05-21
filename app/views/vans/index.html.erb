@@ -4,6 +4,7 @@
   <% @vans.each do |van| %>
     <h3><%= van.title %></p>
     <p>Seats: <%= van.seats %></p>
+    <p>Price: <%= van.price_per_day %> €/day</p>
     <%= link_to "More info", van_path(van)  %>
     <%= link_to "Edit", edit_van_path(van) %>
     <%= link_to "🗑", van_path(van), method: :delete %>
