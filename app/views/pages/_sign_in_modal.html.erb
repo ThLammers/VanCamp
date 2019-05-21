@@ -1,0 +1,17 @@
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Sign Up</h1>
+      </div>
+      <div class="modal-body">
+        <%= render 'devise/sessions/sign_in_form' %>
+      </div>
+      <div class="modal-footer"><!--
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

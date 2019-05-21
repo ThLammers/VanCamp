@@ -1,3 +1,4 @@
+<%= render 'sign_in_modal' %>
 
 <div class="wrapper">
   <% if user_signed_in? %>
@@ -19,9 +20,10 @@
           <img src="<%= asset_path( 'logo.png' ) %>" />
       </div>
 
-      <%= link_to "MEMBER SIGN IN", new_user_session_path, class: "large-bttn"%>
-
+      <p class="large-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
       <%= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
+      <!-- NOT WORKING YET! -->
+      <p class="signup-link" data-toggle="modal" data-target="#signUpModal">MEMBER SIGN IN</p>
     </div>
   <% end %>
 </div>
