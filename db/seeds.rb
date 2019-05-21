@@ -1,13 +1,10 @@
-Van.destroy_all
+require_relative 'seeds_helper'
 
-100.times do
-  Van.create!(
-    title: Faker::FunnyName.name,
-    description: 'the best van ever',
-    location: ['Berlin', 'London', 'Toronto', 'Paris', 'Tokyo'].sample,
-    brand: ['Volvo', 'Mercedes', 'Ferrari', 'Maserati'].sample,
-    category: ['family trip', 'road trip', 'luxury camping'].sample,
-    seats: rand(1..30),
-    user_id: rand(1..3),
-    )
-end
+# destroy all instances
+Van.destroy_all
+User.destroy_all
+
+# create random instances
+create_users(10)
+create_vans(100)
+
