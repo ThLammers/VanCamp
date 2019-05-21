@@ -1,3 +1,5 @@
-hello from the "devise/sessions/new"
-<br>
-<%= render 'sign_in_form' %>
+<!-- ADDING THIS LINE OF TO REDIRECT THE USER TO THE LANDING PAGE WHEN LOGIN FAILED  -->
+<% controller.redirect_to root_path %>
+
+<!-- This would be the default behaviour -->
+<%#= render 'sign_in_form' %>
