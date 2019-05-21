@@ -1,0 +1,5 @@
+<%= form_tag("/vans", {:method => 'get'}) do %>
+    <%= text_field_tag(:location, "location") %>
+    <%= text_field_tag(:seats, "seats") %>
+    <%= submit_tag('search') %>
+<% end %>
