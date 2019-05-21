@@ -3,10 +3,10 @@ class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:commit] == "search"
-      seats = search_params[:seats].to_i
+    if params[:commit]&.downcase == "search"
+      @seats = search_params[:seats]&.to_i
       @location = search_params[:location]
-      @vans = Van.where('location ILIKE :location AND seats >= :seats', location: @location, seats: seats)
+      @vans = Van.where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats)
     else
       @vans = Van.all
     end
