@@ -34,7 +34,7 @@ def create_vans(n)
 end
 
 def create_bookings
-  User.all.each_with_index do |user, count|
+  User.all.each do |user|
     puts "...creating booking for #{user.first_name} #{user.last_name}!"
     checkin = Faker::Date.between(1.month.from_now, 4.month.from_now)
     Booking.create!(
@@ -43,8 +43,6 @@ def create_bookings
       checkin: checkin,
       checkout: checkin + (5..21).to_a.sample # trip between 5 and 21 days long
     )
-    print "*"
-    print "\n" if (count + 1) % 10 == 0
   end
 end
 
