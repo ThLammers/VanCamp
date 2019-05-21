@@ -1,10 +1,12 @@
 class VansController < ApplicationController
 
-  def search
-    raise
-    if params
-      @vans = Van.where(location: params[:location] && :seats >= params[:seats])
+  def index
+    if params[:location] || params[:seats]
+      seats = search_params[:seats]
+      location = search_params[:location]
+      @vans = Van.where(location: location && :seats >= seats)
     else
+      @vans = Van.all
     end
   end
 
