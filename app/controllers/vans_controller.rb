@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :search]
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
