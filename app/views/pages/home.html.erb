@@ -1,39 +1,20 @@
 
-<% if user_signed_in? %>
-<p>Welcome,
-    <%= current_user.first_name %>
-</p>
-<%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
-<% else %>
+<div class="wrapper">
+  <% if user_signed_in? %>
+    <p>Welcome, <%= current_user.first_name %></p>
+    <%= render 'vans/search_for_vans_form' %>
 
-<div class="container">
+    <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
+    <%= link_to "Add Van", new_van_path  %>
+  <% else %>
     <div class="center">
-        <div class="logo">
-            <img src="<%= asset_path( 'logo.png' ) %>" />
-        </div>
+      <div class="logo">
+          <img src="<%= asset_path( 'logo.png' ) %>" />
+      </div>
 
-            <%= link_to "MEMBER SIGN IN", new_user_session_path, class: "large-bttn"%>
+      <%= link_to "MEMBER SIGN IN", new_user_session_path, class: "large-bttn"%>
 
-            <%= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
-
+      <%= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
     </div>
+  <% end %>
 </div>
-
-<% end %>
-</div>
-
-
-<h1>Welcome to VanCamp!</h1>
-<p>Be a van renter camper driver AND a camper van driver owner!</p>
-
-<% if user_signed_in? %>
-  <p>Hi there, <%= current_user.first_name %></p>
-  <%= link_to "Add Van", new_van_path  %>
-  <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %> <br>
-  <%= render 'vans/search_for_vans_form' %>
-<% else %>
-  <p>Hey, stranger! </p>
-  <%= link_to "Sign Up", new_user_registration_path %>
-  <br>
-  <%= link_to "Log In", new_user_session_path  %>
-<% end %>
