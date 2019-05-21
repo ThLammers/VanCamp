@@ -2,8 +2,8 @@ class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates :title, presence: true, length: { minimum: 4 }
+  validates :description, presence: true, length: { minimum: 10 }
   validates :location, presence: true
   validates :brand, presence: true
   validates :category, presence: true

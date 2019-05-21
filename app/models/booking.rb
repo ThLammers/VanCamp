@@ -1,5 +1,3 @@
-require 'date'
-
 class Booking < ApplicationRecord
   belongs_to :van
   belongs_to :user
@@ -10,12 +8,12 @@ class Booking < ApplicationRecord
   validate :checkin_before_checkout
 
   def dates_cannot_be_in_the_past
-    errors.add(:checkin, "Sorry, can't be in the past") if checkin < Date.today
-    errors.add(:checkout, "Sorry, can't be in the past") if checkout < Date.today
+    errors.add(:checkin, "Sorry, can't be in the past") if checkin.present? && checkin < Date.today
+    errors.add(:checkout, "Sorry, can't be in the past") if checkout.present? && checkout < Date.today
   end
 
   def checkin_before_checkout
-    errors.add(:checkout, "Sorry, check-out can't be before check-in.") if checkout < checkin
+    errors.add(:checkout, "Sorry, check-out can't be before check-in.") if checkin.present? && checkout.present? && checkout < checkin
   end
 
   # def checkin_cannot_be_in_the_past
