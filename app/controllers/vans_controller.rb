@@ -1,8 +1,9 @@
 class VansController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :search]
   before_action :set_van, only: [:show, :edit, :destroy]
 
   def index
-    if params[:location] || params[:seats]
+    if params[:commit] == "search"
       seats = search_params[:seats].to_i
       @location = search_params[:location]
       @vans = Van.where('location ILIKE :location AND seats >= :seats', location: @location, seats: seats)
@@ -11,6 +12,10 @@ class VansController < ApplicationController
     end
   end
 
+  def search
+    # raise
+  end
+  
   def show
   end
 
