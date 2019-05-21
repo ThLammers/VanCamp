@@ -1,13 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to VanCamp!</h1>
+<p>Be a van renter camper driver AND a camper van driver owner!</p>
 
 <% if user_signed_in? %>
-  <p>Welcome, <%= current_user.first_name %></p>
+  <p>Hi there, <%= current_user.first_name %></p>
   <%= link_to "Add Van", new_van_path  %>
   <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %> <br>
   <%= render 'vans/search_for_vans_form' %>
 <% else %>
-  <p>Welcome, stranger! Wanna sign up? </p>
+  <p>Hey, stranger! </p>
   <%= link_to "Sign Up", new_user_registration_path %>
   <br>
   <%= link_to "Log In", new_user_session_path  %>
