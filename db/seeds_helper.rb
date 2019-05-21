@@ -25,7 +25,8 @@ def create_vans(n)
       location: ['Berlin', 'London', 'Toronto', 'Paris', 'Tokyo'].sample,
       brand: ['Volvo', 'Mercedes', 'Ferrari', 'Maserati'].sample,
       category: ['family trip', 'road trip', 'luxury camping'].sample,
-      seats: rand(1..30),
+      price_per_day: [50,25,120,350].sample,
+      seats: [[1,2,3,4]*2,[6]*4,[8]*4,[12]*4].flatten.sample,
       user: random_user,
     )
     print "*"
