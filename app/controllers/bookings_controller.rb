@@ -3,10 +3,11 @@ class BookingsController < ApplicationController
 
   def index
     # As a user, I can see all my booked vans
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = policy_scope(Booking).where(user_id: current_user.id)
   end
 
   def show
+    authorize @booking
     # As a user, I can see the details of one of my bookings
   end
 
@@ -15,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.user_id = current_user.id
     @booking.van_id = booking_params[:van_id]
+    authorize @booking
   end
 
   def create
@@ -27,6 +29,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to user_bookings_path(current_user)
   end

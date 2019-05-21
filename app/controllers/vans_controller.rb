@@ -6,9 +6,9 @@ class VansController < ApplicationController
     if params[:commit] == "search"
       seats = search_params[:seats].to_i
       @location = search_params[:location]
-      @vans = Van.where('location ILIKE :location AND seats >= :seats', location: @location, seats: seats)
+      @vans = policy_scope(Van).where('location ILIKE :location AND seats >= :seats', location: @location, seats: seats)
     else
-      @vans = Van.all
+      @vans = policy_scope(Van).all
     end
   end
 
@@ -17,13 +17,16 @@ class VansController < ApplicationController
   end
 
   def show
+    authorize @van
   end
 
   def new
+    authorize @van
     @van = Van.new
   end
 
   def create
+    authorize @van
     @van = Van.new(van_params)
     @van.price_per_day = van_params[:price_per_day].to_i
     @van.user = current_user

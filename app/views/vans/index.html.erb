@@ -45,8 +45,16 @@
     <p>Seats: <%= van.seats %></p>
     <p>Price: <%= van.price_per_day %> €/day</p>
     <%= link_to "More info", van_path(van)  %>
-    <%= link_to "Edit", edit_van_path(van) %>
-    <%= link_to "🗑", van_path(van), method: :delete %>
+
+    <!-- User can update a van if they created it -->
+    <% if policy(van).edit? %>
+      <%= link_to "Edit", edit_van_path(van) %>
+    <% end %>
+
+    <!-- User can delete van if they created it -->
+    <% if policy(van).destroy? %>
+      <%= link_to "🗑", van_path(van), method: :delete %>
+    <% end %>
   <% end %>
 </div>
 
