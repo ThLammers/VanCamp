@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: [:show, :edit, :destroy]
+  before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:location] || params[:seats]
@@ -32,6 +32,8 @@ class VansController < ApplicationController
   end
 
   def update
+    @van.update(van_params)
+    redirect_to @van
   end
 
   def destroy
