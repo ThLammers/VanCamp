@@ -1,0 +1,11 @@
+<h1><%= @van.title %></h1>
+
+<ul>
+  <li><%= @van.description %></li>
+  <li><%= @van.location %></li>
+  <li><%= @van.brand %></li>
+  <li><%= @van.category %></li>
+  <li>Seats: <%= @van.seats %></li>
+  <li>Owner: <%= @van.user.first_name %></li>
+  <li>Price: <%= @van.price_per_day %> €/day</li>
+</ul>

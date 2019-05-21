@@ -1,0 +1,7 @@
+<h2>Search vans:</h2>
+
+<%= form_tag("/vans", {:method => 'get'}) do %>
+  <%= text_field_tag :location, nil, placeholder: 'Location' %>
+  <%= text_field_tag :seats, nil, placeholder: 'Seats' %>
+  <%= submit_tag('search') %>
+<% end %>

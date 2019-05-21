@@ -19,6 +19,9 @@ gem 'devise'
 # Date
 gem 'date'
 
+# Faker for seeds
+gem 'faker'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
