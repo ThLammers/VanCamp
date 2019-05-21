@@ -10,4 +10,8 @@
   <li>Price: <%= @van.price_per_day %> €/day</li>
 </ul>
 
+<% @van.bookings.each do |booking| %>
+<p>User: <%= booking.user.first_name %></p>
+<% end %>
+
 <%= link_to "Book this van", new_van_booking_path(@van)  %>
