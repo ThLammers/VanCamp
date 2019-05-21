@@ -1,0 +1,42 @@
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://whalebonemag.com/wp-content/uploads/2018/11/CoverPhoto_jack-anstey-358980-unsplash.jpg");
+  width: 100%;
+  height: 1000px;
+  padding-top: 1px;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 100px;
+  text-align: center;
+
+}
+.logo img {
+  height: 377px;
+  padding-bottom: 33px;
+}
+
+.signup-link {
+  color: #ffffff;
+  font-family: 'Squada One', cursive;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+.signup-link:hover {
+  color: #ffae2e;
+  text-decoration: none;
+  transition: 0.5s;
+
+}
