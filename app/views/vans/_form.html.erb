@@ -1,0 +1,11 @@
+<%= form_for(@van) do |f| %>
+  <%= f.text_field :title, placeholder: 'Name' %> <br>
+  <%= f.text_field :brand, placeholder: 'Brand' %> <br>
+  <%= f.text_field :category, placeholder: 'Category' %> <br>
+  <%= f.text_field :location, placeholder: 'Location' %> <br>
+  <%= f.text_area :description, placeholder: 'Describe your van here!' %> <br>
+  <%= f.label :seats, 'Seats' %>
+  <%= f.number_field :seats, in: (1..30), placeholder: 'Seats'%> <br>
+  <%= f.submit "Submit!" %>
+<% end %>
+
