@@ -2,13 +2,11 @@
 
 <div>
   <% @vans.each do |van| %>
-    <p><%= van.title %></p>
-    <p><%= van.description %></p>
-    <p><%= van.location %></p>
-    <p><%= van.brand %></p>
-    <p><%= van.category %></p>
+    <h3><%= van.title %></p>
     <p>Seats: <%= van.seats %></p>
-    <p>Owner: <%= van.user.first_name %></p>
+    <%= link_to "More info", van_path(van)  %>
+    <%= link_to "Edit", edit_van_path(van) %>
+    <%= link_to "🗑", van_path(van), method: :delete %>
   <% end %>
 </div>
 
