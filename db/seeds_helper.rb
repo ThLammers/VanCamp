@@ -19,7 +19,7 @@ end
 def create_vans(n)
   puts "creating #{n} random vans!"
   n.times do |count|
-    Van.create!(
+    v = Van.new(
       title: Faker::FunnyName.name,
       description: 'the best van ever',
       location: ['Berlin', 'London', 'Toronto', 'Paris', 'Tokyo'].sample,
@@ -27,9 +27,11 @@ def create_vans(n)
       category: ['family trip', 'road trip', 'luxury camping'].sample,
       price_per_day: [50,25,120,350].sample,
       seats: [[1,2,3,4]*2,[6]*4,[8]*4,[12]*4].flatten.sample,
-      user: random_user,
-      photo: camper_van_photo
+      user: random_user
+      # photo: camper_van_photos.sample
     )
+    v.remote_photo_url = camper_van_photos.sample
+    v.save!
     print "*"
     print "\n" if (count + 1) % 10 == 0
   end
@@ -56,8 +58,8 @@ def random_van
   Van.offset(rand(Van.count)).first
 end
 
-# randomly pick a picture from the internet
-def camper_van_photo
+# camper random images
+def camper_van_photos
   [
     "https://www.amlrv.com/wp-content/uploads/2012/10/2018-EC811-Ext-6.jpg",
     "https://scontent-amt2-1.cdninstagram.com/vp/d5ee32dd1e89963524672663fa90e72a/5D783902/t51.2885-15/sh0.08/e35/p640x640/59640896_455427868527181_6051845666360509035_n.jpg?_nc_ht=scontent-amt2-1.cdninstagram.com",
@@ -81,5 +83,5 @@ def camper_van_photo
     "https://www.bulliholiday.de/vw-bus-mieten/BulliHoliday-VW-Bus-mieten-Blumo-0.jpg",
     "https://mlj3wointmzz.i.optimole.com/w:auto/h:auto/q:auto/https://www.siestacampers.com/wp-content/uploads/2017/08/rio-beach-scene.jpg",
     "https://www.vwheritage.com/blog/wp-content/uploads/2016/04/Europe-Camper-Holiday-June-2013-281.jpg",
-  ].sample
+  ]
 end
