@@ -42,6 +42,8 @@
 <div>
   <% @vans.each do |van| %>
     <h3><%= van.title %></p>
+    <%= cl_image_tag("auto-automobile-blur-173287_fzwfr2",
+      width: 400, height: 400, crop: :fill) %>
     <p>Seats: <%= van.seats %></p>
     <p>Price: <%= van.price_per_day %> €/day</p>
     <%= link_to "More info", van_path(van)  %>
