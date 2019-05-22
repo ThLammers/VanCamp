@@ -8,7 +8,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
-  <table class = "cards">
+  <table class="cards" style="visibility:collapse;">
     <tr>
       <th>id</th>
       <th>title</th>
@@ -44,12 +44,11 @@
     <% end %>
   </table>
 
-<h1>ASSUNTAS CODE</h1>
-<div>
+<div class="van-list">
   <% @vans.each do |van| %>
     <h3><%= van.title %></p>
     <%= cl_image_tag(van.photo,
-      width: 400, height: 400, crop: :fill) %>
+      width: 200, height: 200, crop: :fill) %>
     <p>Seats: <%= van.seats %></p>
     <p>Price: <%= van.price_per_day %> €/day</p>
     <%= link_to "More info", van_path(van)  %>
