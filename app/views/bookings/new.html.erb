@@ -8,4 +8,7 @@
 <p>Owner: <%= @booking.van.user.first_name %></p>
 <p>Price: <%= @booking.van.price_per_day %></p>
 
-<%= link_to "Confirm Booking", van_bookings_path(@booking.van_id), method: :post %>
+
+<% if policy(@booking).create? %>
+  <%= link_to "Confirm Booking", van_bookings_path(@booking.van_id), method: :post %>
+<% end %>
