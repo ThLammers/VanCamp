@@ -6,7 +6,10 @@
   <%= f.text_area :description, placeholder: 'Describe your van here!' %> <br>
   <%= f.label :seats, 'Seats' %>
   <%= f.number_field :seats, in: (1..30), placeholder: 'Seats'%> <br>
-  <%= f.text_field :price_per_day, placeholder: 'Price per day (€)' %>
+  <%= f.text_field :price_per_day, placeholder: 'Price per day (€)' %> <br>
+
+  <%= f.file_field :photo %> <br>
+  <%= f.hidden_field :photo_cache %>
   <%= f.submit "Submit!" %>
 <% end %>
 

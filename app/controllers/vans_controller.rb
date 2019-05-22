@@ -56,7 +56,7 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :price_per_day)
+    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :price_per_day, :photo)
   end
 
   def search_params
