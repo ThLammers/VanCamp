@@ -1,6 +1,7 @@
 class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  mount_uploader :photo, PhotoUploader
 
   validates :title, presence: true, length: { minimum: 4 }
   validates :description, presence: true, length: { minimum: 10 }
