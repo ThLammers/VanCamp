@@ -1,5 +1,7 @@
 <h1><%= @van.title %></h1>
 
+<%= cl_image_tag @van.photo, width: 900, height: 400, crop: :fill %>
+
 <ul>
   <li><%= @van.description %></li>
   <li><%= @van.location %></li>
