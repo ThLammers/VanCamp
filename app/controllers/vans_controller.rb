@@ -10,6 +10,16 @@ class VansController < ApplicationController
     else
       @vans = Van.all
     end
+
+    @vans = Van.where.not(latitude: nil, longitude: nil)
+
+    @markers = @vans.map do |van|
+      {
+        lat: van.latitude,
+        lng: van.longitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { van: van })
+      }
+    end
   end
 
   def search
