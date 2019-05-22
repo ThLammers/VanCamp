@@ -19,22 +19,16 @@
         <div class="small-logo"></div>
       </div>
       <div class="navbar-float-right">
-        <a href="/vans/new">
           <div class="small-bttn">
-            RENT YOUR VAN
+            <%= link_to "RENT YOUR VAN", new_van_path %>
           </div>
-        </a>
-
         <div class="small-bttn">
-          CONTACT US
+          <a href="http://www.letmegooglethat.com/?q=PLEASE+HELP">CONTACT US</a>
         </div>
 
-        <a href="/users/sign_out/<%=current_user.id%>">
         <div class="small-bttn">
-          <%#= link_to "SIGN OUT", destroy_user_session_path(@user), method: :delete  %>
-          SIGN OUT
+          <%= link_to "SIGN OUT", destroy_user_session_path(@user), method: :delete  %>
         </div>
-        </a>
       </div>
     </div>
   </div>

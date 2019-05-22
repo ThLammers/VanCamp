@@ -6,6 +6,9 @@
 
 <div class="wrapper">
   <% if user_signed_in? %>
+  
+  <div class="center">
+
     <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
     <!-- User authorization for adding vans -->
     <% if policy(Van).create? %>
