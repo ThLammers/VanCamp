@@ -8,4 +8,5 @@ class Van < ApplicationRecord
   validates :brand, presence: true
   validates :category, presence: true
   validates :seats, presence: true, inclusion: { in: (0..30) }
+  validates :price_per_day, presence: true, numericality: { only_integer: true }, null: false
 end
