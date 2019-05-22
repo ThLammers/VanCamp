@@ -2,6 +2,11 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+      # if user.admin?
+      #   scope.all
+      # else
+      #   scope.where(user_id: user.id)
+      # end
     end
   end
 

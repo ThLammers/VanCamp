@@ -3,12 +3,17 @@ class BookingsController < ApplicationController
 
   def index
     # As a user, I can see all my booked vans
-    @bookings = policy_scope(Booking).where(user_id: current_user.id)
+    if current_user.admin? || current_user.id == params[:id].to_i
+      @bookings = policy_scope(Booking).where(user_id: params[:id])
+    else
+      @bookings = policy_scope(Booking).where(user_id: params[:id])
+      redirect_to user_bookings_path(current_user)
+    end
   end
 
   def show
-    authorize @booking
     # As a user, I can see the details of one of my bookings
+    authorize @booking
   end
 
   def new
