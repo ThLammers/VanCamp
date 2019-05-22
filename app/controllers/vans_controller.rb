@@ -6,12 +6,11 @@ class VansController < ApplicationController
     if params[:search]
       @seats = search_params[:seats]&.to_i
       @location = search_params[:location]
-      @vans = policy_scope(Van).where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats)
+      @vans = policy_scope(Van).where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats).where.not(latitude: nil, longitude: nil)
     else
       @vans = policy_scope(Van).all
     end
 
-    @vans = Van.where.not(latitude: nil, longitude: nil)
 
     @markers = @vans.map do |van|
       {
