@@ -23,6 +23,7 @@
       <th>price_per_day</th>
       <th colspan="3">admin</th>
     </tr>
+
     <% @vans.each do |van| %>
       <tr>
         <td><%= van.id %></td>
@@ -41,24 +42,26 @@
         <td><%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, van_path(van), method: :delete %></td>
       </tr>
     <% end %>
-
-
-
-
   </table>
 
-  <!-- <p>--------------------------</p>
-  <h1>ASSUNTAS CODE</h1>
-  <div>
-    <% @vans.each do |van| %>
-      <h3><%= van.title %></p>
-      <p>Seats: <%= van.seats %></p>
-      <p>Price: <%= van.price_per_day %> €/day</p>
-      <%= link_to "More info", van_path(van)  %>
+<h1>ASSUNTAS CODE</h1>
+<div>
+  <% @vans.each do |van| %>
+    <h3><%= van.title %></p>
+    <p>Seats: <%= van.seats %></p>
+    <p>Price: <%= van.price_per_day %> €/day</p>
+    <%= link_to "More info", van_path(van)  %>
+
+    <!-- User can update a van if they created it -->
+    <% if policy(van).edit? %>
       <%= link_to "Edit", edit_van_path(van) %>
-      <%= link_to "", van_path(van), method: :delete %>
     <% end %>
-  </div> -->
+
+    <!-- User can delete van if they created it -->
+    <% if policy(van).destroy? %>
+      <%= link_to "🗑", van_path(van), method: :delete %>
+    <% end %>
+  <% end %>
 </div>
 
 
