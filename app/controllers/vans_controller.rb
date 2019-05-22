@@ -21,15 +21,15 @@ class VansController < ApplicationController
   end
 
   def new
-    authorize @van
     @van = Van.new
+    authorize @van
   end
 
   def create
-    authorize @van
     @van = Van.new(van_params)
     @van.price_per_day = van_params[:price_per_day].to_i
     @van.user = current_user
+    authorize @van
     if @van.save
       redirect_to @van
     else
@@ -38,14 +38,17 @@ class VansController < ApplicationController
   end
 
   def edit
+    authorize @van
   end
 
   def update
+    authorize @van
     @van.update(van_params)
     redirect_to @van
   end
 
   def destroy
+    authorize @van
     @van.destroy
     redirect_to vans_path
   end
@@ -53,7 +56,7 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :price_per_day)
+    params.require(:van).permit(:location, :title, :description, :seats, :brand, :category, :price_per_day, :user_id)
   end
 
   def search_params
