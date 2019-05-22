@@ -6,8 +6,7 @@
 
 <div class="wrapper">
   <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
-    <%= link_to "Add Van", new_van_path  %>
+
   <div class="center">
       <div class="logo">
           <img src="<%= asset_path( 'logomove.gif' ) %>" />
