@@ -14,7 +14,7 @@ class VanPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    creator? || admin?
   end
 
   def update?
@@ -22,6 +22,6 @@ class VanPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    creator? || admin?
   end
 end

@@ -46,4 +46,14 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private
+
+  def admin?
+    user.admin == true
+  end
+
+  def creator?
+    record.user == user
+  end
 end

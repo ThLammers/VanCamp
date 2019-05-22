@@ -6,7 +6,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    creator? || admin?
   end
 
   def create?
@@ -14,10 +14,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    creator? || admin?
   end
 
   def destroy?
-    record.user == user
+    creator? || admin?
   end
 end
