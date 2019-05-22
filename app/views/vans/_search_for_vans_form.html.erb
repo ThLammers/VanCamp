@@ -1,12 +1,14 @@
 <div class = "title-text">
-<h2 >Find a van for you:</h2>
+Find a van for you:
 </div>
   <%= form_tag("/vans", {:method => 'get'}) do %>
   <%= select_tag "location", raw("<option>Berlin</option><option>Paris</option><option>Toronto</option><option>Tokyo</option><option>London</option>"), disabled: false, prompt: ' LOCATION', class: 'large-bttn' %>
 
 
    <%= select_tag "seats", raw("<option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>"), disabled: false, prompt: ' SEATS', class: 'large-bttn' %>
-  <%= submit_tag 'SEARCH', class: 'large-bttn' %>
+
+  <%= submit_tag 'GO', class: 'cta-bttn' %>
+
   <% end %>
 
 

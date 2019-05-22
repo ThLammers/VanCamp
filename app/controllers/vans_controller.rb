@@ -1,12 +1,12 @@
 class VansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :search]
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:commit] == "search"
-      seats = search_params[:seats].to_i
+    if params[:commit]&.downcase == "search"
+      @seats = search_params[:seats]&.to_i
       @location = search_params[:location]
-      @vans = policy_scope(Van).where('location ILIKE :location AND seats >= :seats', location: @location, seats: seats)
+      @vans = policy_scope(Van).where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats)
     else
       @vans = policy_scope(Van).all
     end
