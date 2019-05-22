@@ -1,9 +1,9 @@
 class VansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :search, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:commit]&.downcase == "search"
+    if params[:search]
       @seats = search_params[:seats]&.to_i
       @location = search_params[:location]
       @vans = policy_scope(Van).where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats)
@@ -20,10 +20,6 @@ class VansController < ApplicationController
         # infoWindow: render_to_string(partial: "infowindow", locals: { van: van })
       }
     end
-  end
-
-  def search
-    # raise
   end
 
   def show
