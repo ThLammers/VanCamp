@@ -1,7 +1,12 @@
+<!-- RENDER THE MODALS (they are not visibly rendered on pageload) -->
+<!-- clicking the buttons with the given Ids trigger the modal to appear! -->
+<!-- bootstrap documentation: https://getbootstrap.com/docs/4.0/components/modal/ -->
+<%= render 'sign_in_modal' %>
+<%= render 'sign_up_modal' %>
 
 <div class="wrapper">
   <% if user_signed_in? %>
-    <!-- <p>Welcome, <%= current_user.first_name %></p> -->
+    <p>Logged-in as <%= current_user.first_name %></p>
     <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
     <%= link_to "Add Van", new_van_path  %>
   <div class="center">
@@ -19,9 +24,10 @@
           <img src="<%= asset_path( 'logo.png' ) %>" />
       </div>
 
-      <%= link_to "MEMBER SIGN IN", new_user_session_path, class: "large-bttn"%>
-
-      <%= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
+      <p class="large-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
+      <%#= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
+      <!-- NOT WORKING YET! -->
+      <p class="signup-link" data-toggle="modal" data-target="#signUpModal">SIGN UP FOR BETA</p>
     </div>
   <% end %>
 </div>
