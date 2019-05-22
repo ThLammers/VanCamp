@@ -6,7 +6,6 @@
 
 <div class="wrapper">
   <% if user_signed_in? %>
-    <p>Logged-in as <%= current_user.first_name %></p>
     <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
     <!-- User authorization for adding vans -->
     <% if policy(Van).create? %>
@@ -28,7 +27,7 @@
           <img src="<%= asset_path( 'logomove.gif' ) %>" />
       </div>
 
-      <p class="large-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
+      <p class="xl-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
       <%#= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
       <!-- NOT WORKING YET! -->
       <p class="signup-link" data-toggle="modal" data-target="#signUpModal">SIGN UP FOR BETA</p>
