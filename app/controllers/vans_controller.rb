@@ -27,7 +27,7 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
-    @van.price_per_day = van_params[:price_per_day].to_i
+    @van.price_per_day = van_params[:price_per_day]&.to_i unless van_params[:price_per_day].empty?
     @van.user = current_user
     authorize @van
     if @van.save
