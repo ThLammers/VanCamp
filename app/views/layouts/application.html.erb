@@ -12,24 +12,33 @@
   <body>
 
 <!-- ## main-nav-bar -->
-<div class="main-containter">
-  <div class= "navbar-wrapper">
-    <div class="navbar-float-left">
-      <div class="small-logo"></div>
-    </div>
-    <div class="navbar-float-right">
-      <div class="small-bttn">
-        RENT YOUR VAN
+<% if user_signed_in? %>
+  <div class="main-containter">
+    <div class= "navbar-wrapper">
+      <div class="navbar-float-left">
+        <div class="small-logo"></div>
       </div>
-      <div class="small-bttn">
-        CONTACT US
-      </div>
-      <div class="small-bttn">
-        SIGN OUT
+      <div class="navbar-float-right">
+        <a href="/vans/new">
+          <div class="small-bttn">
+            RENT YOUR VAN
+          </div>
+        </a>
+
+        <div class="small-bttn">
+          CONTACT US
+        </div>
+
+        <a href="/users/sign_out/<%=current_user.id%>">
+        <div class="small-bttn">
+          <%#= link_to "SIGN OUT", destroy_user_session_path(@user), method: :delete  %>
+          SIGN OUT
+        </div>
+        </a>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
 
     <% if notice %>
