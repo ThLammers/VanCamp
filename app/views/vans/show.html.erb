@@ -17,5 +17,8 @@
 <% end %>
 
 
+<!-- ADDING MODAL TO CONFIRM BOOKING -->
+<%= render 'confirm_booking_modal', locals: {van: @van, booking: @booking} %>
+<p class="xl-bttn" data-toggle="modal" data-target="#confirmBookingModal">BOOK THIS SHIT</p>
 
-<%= link_to "Book this van", new_van_booking_path(@van)  %>
+<%#= link_to "Book this van", new_van_booking_path(@van)  %>

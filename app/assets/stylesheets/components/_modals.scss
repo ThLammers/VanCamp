@@ -1,0 +1,90 @@
+.vancamp-modal {
+  border-radius: 20px;
+  border: 5px solid black;
+  padding: 10px;
+}
+
+.vancamp-modal h1 {
+  font-family: 'Squada One', cursive;
+  text-align: center;
+  padding-bottom: 27px;
+}
+
+.vancamp-modal label {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.form-inputs {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.form-check-label {
+  font-weight: normal;
+}
+#date-of-birth-label {
+  margin: 0;
+  color: black;
+}
+// .vancamp-modal input {
+//   font-family: 'Roboto', sans-serif;
+//   font-weight: bold;
+//   // text-align: center;
+// }
+.vancamp-modal input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #909090;
+  font-weight: normal;
+}
+
+// ADD STYLE TO BOOTSTRAP MODAL DEFAULT
+.vancamp-modal .form-control {
+  border: 3px solid black;
+  border-radius: 5px;
+}
+.vancamp-modal .form-actions {
+  text-align: center;
+}
+
+// CUSTOM SIZE FOR ALL MODALS GO HERE
+#sign-in-modal {
+  max-width: 400px;
+}
+#sign-in-modal .vancamp-modal .modal-body {
+  padding: 47px;
+}
+#sign-up-modal {
+  max-width: 480px;
+}
+#sign-up-modal .vancamp-modal .modal-body {
+  padding: 56px;
+}
+
+.text-on-modal {
+  color: #909090;
+  font-family: 'Squada One', cursive;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+.form-check-input {
+
+}
+// .text-on-modal:hover {
+//   color: #ffae2e;
+//   text-decoration: none;
+//   transition: 0.5s;
+// }
+
+// SUBMIT BUTTON
+.modal .xl-bttn {
+  margin-top: 40px;
+}
+// ANOTHER BUTTON COLOR MAYBE? (thomas)
+// .modal .xl-bttn {
+//   background-color: #dbbda8;
+// }
+// .modal .xl-bttn:hover {
+//   background-color: #e4ae89;
+// }
+
+
+
