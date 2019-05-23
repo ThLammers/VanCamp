@@ -3,15 +3,14 @@ class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search]
+    if params[:location]
       @seats = search_params[:seats]&.to_i
       @location = search_params[:location]
-      @vans = policy_scope(Van).where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats).where.not(latitude: nil, longitude: nil)
+      # .where("location ILIKE ? AND seats >= ?", "%#{@location}%", @seats)
+      @vans = policy_scope(Van).near(@location, 100).where.not(latitude: nil, longitude: nil)
     else
       @vans = policy_scope(Van).all
     end
-
-
     @markers = @vans.map do |van|
       {
         lat: van.latitude,
