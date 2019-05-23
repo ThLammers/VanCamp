@@ -1,11 +1,34 @@
-<h1>My bookings</h1>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <%= booking.van.title %> Price: <%= booking.van.price_per_day %>
-      <%= link_to "More Info", booking_path(booking)  %>
-      <%= link_to "Cancel Booking", delete_booking_path(booking), method: :delete   %>
-    </li>
-  <% end %>
-</ul>
+
+<div class="booking-container">
+  <div class="booking-wrapper">
+
+    <div class="photo-wrapper">
+      <div class="photo-id"></div>
+      <div class="info">
+        <h1>THILO LAMMERS</h1>
+        <h2>From Berlin</h2>
+        <p>I have a Finance/Accounting background and are here to learn a new skills. After the course I would love to travel Europe and freelane from my sprinter.</p>
+      </div>
+    </div>
+    <div class="booking-title">
+    BOOKINGS
+    </div>
+      <ul class="bookings-list" style="list-style: none;">
+        <% @bookings.each do |booking| %>
+          <div class="card-product">
+          <img src="https://i.ibb.co/qknrh25/vasilios-muselimis-745027-unsplash.jpg">
+          <div class="card-product-infos">
+          <h2><%= booking.van.title %></h2>
+          <p><strong>Price:</strong> <%= booking.van.price_per_day %></p>
+          <%= link_to "More Info", booking_path(booking)  %>
+          <%= link_to "Cancel Booking", delete_booking_path(booking), method: :delete   %>
+          </div>
+
+
+          </div>
+        <% end %>
+      </ul>
+    </div>
+</div>
