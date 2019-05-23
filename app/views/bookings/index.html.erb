@@ -30,3 +30,10 @@
       </ul>
     </div>
 </div>
+
+<!-- PREDENDER A MODAL FOR ALL BOOKINGS -->
+<% @bookings.each do |booking| %>
+  <%= booking.van.title %> Price: <%= booking.van.price_per_day %>
+  <a class="xl-bttn" data-toggle="modal" data-booking-id="<%= booking.id %>" data-target="<%= "#bookingDetailsModal#{booking.id}" %>">Details</a>
+  <%= render partial: 'booking_details_modal', locals: { booking: booking } %>
+<% end %>
