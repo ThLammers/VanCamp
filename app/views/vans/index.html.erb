@@ -3,14 +3,14 @@
   <div class="van-card-container">
       <% @vans.each do |van| %>
     <div class="van-card">
-        <h3 class=title-in-card><%= van.title %></h3>
-        <div style="background-image: url(<%= cloudinary_url(van.photo) %>);" class="card-image">
-          <p class="seats">Seats: <%= van.seats %></p>
-          <p class="price">Price: <%= van.price_per_day %> €/day</p>
-          <div class = "more-into-link">
-          <%= link_to "More info", van_path(van)  %>
-          </div>
+        <div class="card-image">
+          <%= link_to cl_image_tag(van.photo), van_path(van) %>
         </div>
+          <h3 class=title-in-card><%= van.title %></h3>
+          <div class=bottom-banner>
+<!--           <p class="seats">Seats: <%= van.seats %></p>
+ -->          <p class="price">Price: <%= van.price_per_day %> €/day</p>
+          </div>
 
         <!-- User can update a van if they created it -->
         <%# if policy(van).edit? %>
@@ -21,6 +21,7 @@
         <%# if policy(van).destroy? %>
           <%#= link_to "🗑", van_path(van), method: :delete %>
         <%# end %>
+
     </div>
       <% end %>
 
