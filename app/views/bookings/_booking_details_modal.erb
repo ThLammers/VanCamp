@@ -1,0 +1,10 @@
+<div class="modal fade" id="<%= "bookingDetailsModal#{booking_id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render partial: "show", locals: { booking: Booking.find(booking_id) } %>
+      </div>
+    </div>
+  </div>
+</div>
+
