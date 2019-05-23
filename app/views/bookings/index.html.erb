@@ -1,15 +1,16 @@
 <!-- PREDENDER A MODAL FOR ALL BOOKINGS -->
 
 <h1>My bookings</h1>
-
 <ul>
-  <% booking = @bookings.first %>
-
   <% @bookings.each do |booking| %>
-
+    <li>
+      <%= booking.van.title %> Price: <%= booking.van.price_per_day %>
+      <a class="xl-bttn" data-toggle="modal" data-booking-id="<%= booking.id %>" data-target="<%= "#bookingDetailsModal#{booking.id}" %>">Details</a>
+      <%= render partial: 'booking_details_modal', locals: { booking: booking } %>
+      <%= link_to "Cancel Booking", delete_booking_path(booking), class: "xl-bttn", method: :delete %>
+    </li>
   <% end %>
-  <%= render partial: 'booking_details_modal', locals: { booking: booking } %>
-  <a class="xl-bttn" data-toggle="modal" data-target="#bookingDetailsModal147">Details</a>
 </ul>
+
 
 
