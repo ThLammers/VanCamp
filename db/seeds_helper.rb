@@ -22,7 +22,7 @@ def create_vans(n)
     v = Van.new(
       title: Faker::FunnyName.name,
       description: 'the best van ever',
-      location: ['Berlin', 'London', 'Toronto', 'Paris', 'Tokyo'].sample,
+      location: addresses.sample,
       brand: ['Volvo', 'Mercedes', 'Ferrari', 'Maserati'].sample,
       category: ['family trip', 'road trip', 'luxury camping'].sample,
       price_per_day: [50,25,120,350].sample,
@@ -85,3 +85,23 @@ def camper_van_photos
     "https://www.vwheritage.com/blog/wp-content/uploads/2016/04/Europe-Camper-Holiday-June-2013-281.jpg",
   ]
 end
+
+# random berlin addresses
+def addresses
+  [
+    "Rudi-Dutschke-Straße 26, 10969 Berlin",
+    "Leipziger Str. 16, 10117 Berlin",
+    "Elsenstraße 115-116, 12435 Berlin",
+    "Platz der Luftbrücke 5, 12101 Berlin",
+    "10827 Berlin",
+    "Kurfürstendamm, 10719 Berlin",
+    "Spandauer Damm 20-24, 14059 Berlin",
+    "Sterndamm 69, 12487 Berlin",
+    "Dunckerstr. 85, Berlin",
+    "Cora-Berliner-Straße 1, 10117 Berlin",
+    "Nonnendammallee 104, 13629 Berlin",
+    "Olympischer Platz 3, 14053 Berlin",
+    "Wasgensteig 30, 14129 Berlin",
+  ]
+end
+
