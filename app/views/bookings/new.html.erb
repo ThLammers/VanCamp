@@ -1,14 +1,1 @@
-<h1>Confirm your booking</h1>
-
-<h2>Details:</h2>
-
-<p>Van: <%= @booking.van.title %></p>
-<p>Brand: <%= @booking.van.brand %></p>
-<p>Seats: <%= @booking.van.seats %></p>
-<p>Owner: <%= @booking.van.user.first_name %></p>
-<p>Price: <%= @booking.van.price_per_day %></p>
-
-
-<% if policy(@booking).create? %>
-  <%= link_to "Confirm Booking", van_bookings_path(@booking.van_id), method: :post %>
-<% end %>
+<%= render 'new' %>

@@ -22,6 +22,13 @@ class VansController < ApplicationController
 
   def show
     authorize @van
+    # TO DISCUSS: we need an empty bookings instance for the vans show page
+    # to be ready in case a modal is triggered. It seems messy to me, normally
+    # this is a task that the bookings controller should do, isn't it? :P (thomas)
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.van = @van
+    authorize @booking
   end
 
   def new
