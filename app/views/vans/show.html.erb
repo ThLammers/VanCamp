@@ -70,7 +70,8 @@
        </div>
 
          <div id="book-bttn-div">
-           <%= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
+            <a class="book-bttn" data-toggle="modal" data-target="#confirmBookingModal">BOOK</a>
+            <%#= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
          </div>
       </div>
 
@@ -85,4 +86,7 @@
 
 
 
+<!-- ADDING MODAL TO CONFIRM BOOKING -->
+<%= render 'confirm_booking_modal', locals: {van: @van, booking: @booking} %>
 
+<%#= link_to "Book this van", new_van_booking_path(@van)  %>

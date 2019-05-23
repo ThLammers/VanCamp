@@ -1,14 +1,14 @@
 <div class = "title-text">
-Find a van for you:
+  Find a van for you:
 </div>
-  <%= form_tag("/vans", {:method => 'get'}) do %>
-  <%= select_tag "location", raw("<option>Berlin</option><option>Paris</option><option>Toronto</option><option>Tokyo</option><option>London</option>"), disabled: false, prompt: ' LOCATION', class: 'large-bttn' %>
 
-
-   <%= select_tag "seats", raw("<option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>"), disabled: false, prompt: ' SEATS', class: 'large-bttn' %>
-
-  <%= submit_tag 'GO', name: "search", class: 'cta-bttn' %>
-
-  <% end %>
+<!-- SEARCH INPUT FIELD  -->
+<%= form_tag("/vans", {:method => 'get', :class => 'search-form'}) do %>
+  <input class='search-input' name="location" id="address-input" placeholder="  Where are you going?" />
+  <!-- SAVE SYNTAX FOR DROPDOWN IN CASE WE DO SELECT2 -->
+  <%#= select_tag "location", raw("<option>Berlin</option><option>Paris</option><option>Toronto</option><option>Tokyo</option><option>London</option>"), disabled: false, prompt: ' LOCATION', class: 'large-bttn' %>
+  <!-- SAVE GO BUTTON -->
+  <%#= submit_tag 'GO', name: "search", class: 'cta-bttn' %>
+<% end %>
 
 
