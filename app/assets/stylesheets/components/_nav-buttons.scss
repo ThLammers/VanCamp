@@ -100,8 +100,6 @@
   }
 }
 
-
-
 .cta-bttn {
   background-color: white;
   color: black;
@@ -137,4 +135,48 @@
   }
 }
 
+.book-bttn {
+  // padding: 10px;
+  border: 1px solid #e79e3c;
+  background-color: #e79e3c;
+  text-decoration: none;
+  width: 100%;
+  font-family: 'Squada One', sans-serif;
+  font-size: 23px;
+  color: black;
+  border-radius: 12px;
+  letter-spacing: 2px;
+  padding-top: 5px;
+}
+
+.book-bttn:hover {
+  border: 1px solid #e79e3c;
+  text-decoration: none;
+  background-color: white;
+  color: #e79e3c;
+  width: 100%;
+}
+
+.back-bttn {
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid #e79e3c;
+  background-color: #e79e3c;
+  width: 30px;
+  height: 20px;
+  color: black;
+  border-radius: 12px;
+  font-family: 'Squada One', sans-serif;
+  font-size: 23px;
+}
+
+.back-bttn:hover {
+  text-decoration: none;
+  border: 1px solid #e79e3c;
+  background-color: white;
+  color: #e79e3c;
+  width: 30px;
+  height: 20px;
+  transform: none;
+}
 
