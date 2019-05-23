@@ -53,14 +53,14 @@
         <%= link_to "More info", van_path(van)  %>
 
         <!-- User can update a van if they created it -->
-        <% if policy(van).edit? %>
-          <%= link_to "Edit", edit_van_path(van) %>
-        <% end %>
+        <%# if policy(van).edit? %>
+          <%#= link_to "Edit", edit_van_path(van) %>
+        <%# end %>
 
         <!-- User can delete van if they created it -->
-        <% if policy(van).destroy? %>
-          <%= link_to "🗑", van_path(van), method: :delete %>
-        <% end %>
+        <%# if policy(van).destroy? %>
+          <%#= link_to "🗑", van_path(van), method: :delete %>
+        <%# end %>
     </div>
       <% end %>
 
