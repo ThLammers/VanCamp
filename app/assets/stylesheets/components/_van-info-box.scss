@@ -5,7 +5,7 @@
   width: 100%;
   margin: 0px auto;
   border-radius: 12px;
-  border: 3px solid black;
+  border: 2px solid black;
 }
 
 .van-info-box {
@@ -38,6 +38,7 @@
 
 .img-box {
   border-radius: 0 12px 12px 0;
+  background-size: cover;
 }
 
 .info {
@@ -55,7 +56,8 @@
 }
 
 .back-bttn-div {
-  padding: 20px 0;
+  margin: 0 0 0 auto;
+  padding: 0 0 20px 0;
 }
 
 #book-bttn-div {
@@ -65,5 +67,38 @@
   text-align: center;
   margin-top: 10px;
 }
+
+
+.van-title {
+  color: #e79e3c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#van-title {
+  font-family: 'Squada One', serif;
+  font-size: 3.5em;
+  margin-top: 10px;
+}
+
+#van-description {
+  opacity: 0.7;
+  font-size: 1.2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: black;
+}
+
+// .van-banner {
+//   background-size: cover;
+//   height: 75vh;
+//   text-align: center;
+//   position: relative;
+//   display:flex;
+//   align-items: center;
+//   justify-content: center;
+//   background-position: bottom;
+//   z-index: 0;
+// }
 
 
