@@ -5,35 +5,25 @@
 <%= render 'sign_up_modal' %>
 
 <div class="wrapper">
-  <% if user_signed_in? %>
-  
   <div class="center">
+    <% if user_signed_in? %>
 
-    <%= link_to "Sign Out", destroy_user_session_path(@user), method: :delete  %>
-    <!-- User authorization for adding vans -->
-    <% if policy(Van).create? %>
-      <%= link_to "Add Van", new_van_path  %>
+      <div class="center">
+        <div class="logo">
+          <img src="<%= asset_path( 'logomove.gif' ) %>" />
+        </div>
+        <%= render 'vans/search_for_vans_form' %>
+      </div>
+
+    <% else %>
+
+      <div class="center">
+        <div class="logo">
+          <img src="<%= asset_path( 'logomove.gif' ) %>" />
+        </div>
+        <p class="xl-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
+        <p class="signup-link" data-toggle="modal" data-target="#signUpModal">SIGN UP FOR BETA</p>
+      </div>
     <% end %>
-
-    <div class="center">
-      <div class="logo">
-          <img src="<%= asset_path( 'logomove.gif' ) %>" />
-      </div>
-
-    <%= render 'vans/search_for_vans_form' %>
-
-    </div>
-
-  <% else %>
-    <div class="center">
-      <div class="logo">
-          <img src="<%= asset_path( 'logomove.gif' ) %>" />
-      </div>
-
-      <p class="xl-bttn" data-toggle="modal" data-target="#signInModal">MEMBER SIGN IN</p>
-      <%#= link_to "SIGN UP FOR BETA", new_user_registration_path, class: "signup-link" %>
-      <!-- NOT WORKING YET! -->
-      <p class="signup-link" data-toggle="modal" data-target="#signUpModal">SIGN UP FOR BETA</p>
-    </div>
-  <% end %>
+  </div>
 </div>
