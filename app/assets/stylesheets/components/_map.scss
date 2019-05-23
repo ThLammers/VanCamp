@@ -1,22 +1,6 @@
-
-// .mapboxgl-popup {
-//   max-width: 200px;
-// }
-
-// .mapboxgl-popup-content {
-//   text-align: center;
-//   font-family: 'Open Sans', sans-serif;
-// }
-
-.main-container{
-}
-
-#map{
-  height: 100vh;
-  // position: sticky;
+#map {
+  position: sticky;
   top: 0;
-}
-
-.cards {
-  flex-grow: 1;
+  box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.22);
+  border: 1px solid #0d0d0b;
 }
