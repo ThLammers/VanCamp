@@ -1,0 +1,16 @@
+
+.profile-badge {
+  height: 99%;
+  width: 25px;
+  margin-right: 3px;
+  margin-bottom: 4px;
+
+  background-image: url("profile.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.profile-badge {
+  display: hidden;
+}
