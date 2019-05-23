@@ -79,9 +79,10 @@
 
 
 .rent-bttn {
-  padding: 2px 7px 0 7px;
+  padding: 2px 10px 0 10px;
   background-color: black;
-  margin-top: 45px;
+  margin-top: 34px;
+  margin-left: 48px;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 800;
@@ -89,7 +90,6 @@
   letter-spacing: 1.5px;
   color: white;
   border-radius: 7px 7px 0 0;
-  // border: 2px solid black;
   a {
     color: white;
     &:hover {
