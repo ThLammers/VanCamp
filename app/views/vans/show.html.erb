@@ -4,77 +4,80 @@
 
       <%#= cl_image_tag @van.photo, class: "van-banner-photo"%>
   <!-- </div> -->
-<div class="show-container">
 
-  <div class="back-bttn-div">
-      <%= link_to "Back", vans_path, class: "back-bttn"  %>
-  </div>
+<div class="main-show-container" style="background-image: url(<%= cl_image_path @van.photo, opacity: 40 %>)">
+  <div class="show-container">
 
-  <div class="huge-info-card">
+    <div class="back-bttn-div">
+        <%= link_to "Back", vans_path, class: "back-bttn"  %>
+    </div>
 
-   <div class="van-outer-box">
+    <div class="huge-info-card">
 
-      <div class="van-title">
-        <h1 id="van-title"><%= @van.title %></h1>
-        <h2 id="van-description">"<%= @van.description %>"</h2>
+     <div class="van-outer-box">
+
+        <div class="van-title">
+          <h1 id="van-title"><%= @van.title %></h1>
+          <h2 id="van-description">"<%= @van.description %>"</h2>
+        </div>
+
+        <div class="van-info-box">
+
+         <div class="info">
+           <div class="icon">
+             <i class="fas fa-search-location"></i>
+           </div>
+           <div><%= @van.location.upcase %></div>
+         </div>
+
+         <div class="info">
+           <div class="icon">
+             <i class="fas fa-car"></i>
+           </div>
+           <div><%= @van.brand.upcase %></div>
+         </div>
+
+         <div class="info">
+           <div class="icon">
+             <i class="fas fa-question"></i>
+           </div>
+           <div><%= @van.category.upcase %></div>
+         </div>
+
+         <div class="info">
+           <div class="icon">
+             <i class="fas fa-users"></i>
+           </div>
+           <div><%= @van.seats %></div>
+         </div>
+
+         <div class="info">
+           <div class="icon">
+             <i class="far fa-user"></i>
+           </div>
+           <div><%= @van.user.first_name.upcase %></div>
+         </div>
+
+         <div class="info">
+           <div class="icon">
+             <i class="fas fa-tag"></i>
+           </div>
+           <div>
+             €
+             <%= @van.price_per_day %><br>
+           </div>
+         </div>
+       </div>
+
+         <div id="book-bttn-div">
+           <%= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
+         </div>
       </div>
 
-      <div class="van-info-box">
+      <div class="img-box" style="background-image: url(<%= cl_image_path @van.photo %>)">
+      </div>
 
-       <div class="info">
-         <div class="icon">
-           <i class="fas fa-search-location"></i>
-         </div>
-         <div><%= @van.location.upcase %></div>
-       </div>
-
-       <div class="info">
-         <div class="icon">
-           <i class="fas fa-car"></i>
-         </div>
-         <div><%= @van.brand.upcase %></div>
-       </div>
-
-       <div class="info">
-         <div class="icon">
-           <i class="fas fa-question"></i>
-         </div>
-         <div><%= @van.category.upcase %></div>
-       </div>
-
-       <div class="info">
-         <div class="icon">
-           <i class="fas fa-users"></i>
-         </div>
-         <div><%= @van.seats %></div>
-       </div>
-
-       <div class="info">
-         <div class="icon">
-           <i class="far fa-user"></i>
-         </div>
-         <div><%= @van.user.first_name.upcase %></div>
-       </div>
-
-       <div class="info">
-         <div class="icon">
-           <i class="fas fa-tag"></i>
-         </div>
-         <div>
-           €
-           <%= @van.price_per_day %><br>
-         </div>
-       </div>
-     </div>
-
-       <div id="book-bttn-div">
-         <%= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
-       </div>
     </div>
-
-    <div class="img-box" style="background-image: url(<%= cl_image_path @van.photo %>)">
-    </div>
-
   </div>
 </div>
 
