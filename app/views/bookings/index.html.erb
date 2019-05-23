@@ -17,16 +17,14 @@
     </div>
       <ul class="bookings-list" style="list-style: none;">
         <% @bookings.each do |booking| %>
-          <div class="card-product">
+          <div class="card-booking">
           <img src="https://i.ibb.co/qknrh25/vasilios-muselimis-745027-unsplash.jpg">
-          <div class="card-product-infos">
+          <div class="card-booking-infos">
           <h2><%= booking.van.title %></h2>
           <p><strong>Price:</strong> <%= booking.van.price_per_day %></p>
           <%= link_to "More Info", booking_path(booking)  %>
           <%= link_to "Cancel Booking", delete_booking_path(booking), method: :delete   %>
           </div>
-
-
           </div>
         <% end %>
       </ul>

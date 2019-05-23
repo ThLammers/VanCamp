@@ -3,15 +3,18 @@
   display: flex;
   justify-content: center;
   background-color: gray;
-  height: 100%;
+  height: 1000px;
   list-style: none;
+  background-image: url("https://i.ibb.co/Tk0FPPK/john-canelis-315784-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 
 }
 
 
 .booking-wrapper {
   margin-top: 80px;
-  width: 75%;
+  width: 76%;
   height: 600px;
   background-color: white;
   border-radius: 12px;
@@ -31,14 +34,15 @@
   // margin: -7px;
 }
 .info {
-  max-width: 350px;
+  max-width: 440px;
   margin-top: 17px;
-  margin-left: 20px;
+  margin-left: 21px;
 }
 
 .info h1{
   font-family: 'Oswald', sans-serif;
-  font-size: 22px;
+  font-size: 27px;
+  margin-top: -10px;
 }
 .info h2{
   font-size: 16px;
@@ -59,13 +63,16 @@
 
 .photo-id {
   background-image: url("thilo.png");
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background-size: cover;
   overflow: hidden;
-  margin-top: -12px;
-  margin-left: -12px;
-  border-radius: 12px 0 0 0;
+  margin-top: 10px;
+  margin-left: 30px;
+  // margin-top: -12px;
+  // margin-left: -12px;
+  // border-radius: 12px 0 0 0;
+  border-radius: 50px;
 }
 
 .bookings-list {
@@ -74,7 +81,7 @@
 
 
 
-.card-product {
+.card-booking {
   overflow: hidden;
   border-radius: 12px;
   height: 100px;
@@ -86,20 +93,20 @@
 
 }
 
-.card-product img {
+.card-booking img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-booking h2 {
 
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.card-booking p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -107,7 +114,7 @@
   margin-top: 7px;
 }
 
-.card-product a {
+.card-booking a {
   font-size: 10px;
   line-height: 1.4;
   opacity: .7;
@@ -115,6 +122,6 @@
   margin-top: 55px;
 }
 
-.card-product .card-product-infos {
+.card-booking .card-booking-infos {
   padding: 16px;
 }
