@@ -60,20 +60,17 @@
 .small-bttn {
   display: flex;
   align-items: center;
-  padding: 0 10px 0 10px;
+  padding: 0 6px 0 10px;
   color: black;
-  height: 50px;
   margin: 5px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 15px;
-  // border: 2px solid black;
-  text-align: center;
+  font-size: 14px;
+
   a {
     color: black;
     &:hover {
       background-color: white;
-      border-bottom: 2px solid #d55d38;
       transition: 0.2s;
       color: #d55d38;
     }
@@ -81,6 +78,27 @@
 }
 
 
+.rent-bttn {
+  padding: 2px 7px 0 7px;
+  background-color: black;
+  margin-top: 45px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: white;
+  border-radius: 7px 7px 0 0;
+  // border: 2px solid black;
+  a {
+    color: white;
+    &:hover {
+      color: #e79e3c;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+  }
+}
 
 
 

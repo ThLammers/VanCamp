@@ -16,18 +16,23 @@
   <div class="main-containter">
     <div class= "navbar-wrapper">
       <div class="navbar-float-left">
+        <a href="https://vancamp.herokuapp.com/">
         <div class="small-logo"></div>
+        </a>
+
       </div>
-      <div class="navbar-float-right">
-          <div class="small-bttn">
-            <%= link_to "RENT YOUR VAN", new_van_path %>
+      <div class="rent-bttn">
+            <%= link_to "LIST YOUR VAN", new_van_path %>
           </div>
-        <div class="small-bttn">
-          <a href="http://www.letmegooglethat.com/?q=PLEASE+HELP">CONTACT US</a>
-        </div>
+      <div class="navbar-float-right">
 
         <div class="small-bttn">
-          <%= link_to "SIGN OUT", destroy_user_session_path(@user), method: :delete  %>
+          <%= link_to current_user.first_name.upcase, user_bookings_path(current_user.id) %>
+        </div>
+        <div class="profile-badge">
+        </div>
+        <div class="small-bttn" style="margin-left: -2px;">
+          <%= link_to "LOG OUT", destroy_user_session_path(@user), method: :delete  %>
         </div>
       </div>
     </div>
