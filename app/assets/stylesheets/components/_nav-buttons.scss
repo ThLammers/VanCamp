@@ -80,10 +80,6 @@
   }
 }
 
-
-
-
-
 .cta-bttn {
   background-color: white;
   color: black;
@@ -119,4 +115,22 @@
   }
 }
 
+.book-bttn {
+  // padding: 10px;
+  border: 3px solid black;
+  text-decoration: none;
+}
+
+.book-bttn:hover {
+  text-decoration: none;
+}
+
+.back-bttn {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.back-bttn:hover {
+  text-decoration: none;
+}
 

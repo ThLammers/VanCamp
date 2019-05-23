@@ -1,11 +1,7 @@
-.main-containter {
+.navbar-container {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  // position: sticky;
-  // top: 0;
-  right: 11%;
-  z-index: 20000;
+  position: relative;
 }
 
 .navbar-wrapper {
@@ -22,6 +18,9 @@
   width: 76vw;
   height: 60px;
   box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.42);
+  position: absolute;
+  right: 11%;
+  z-index: 20000;
 }
 
 .navbar-float-right {

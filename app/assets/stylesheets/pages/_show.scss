@@ -1,0 +1,9 @@
+@import "components/van-banner";
+@import "components/van-info-box";
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  width: 76vw;
+  margin: 70px auto;
+}
