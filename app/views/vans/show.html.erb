@@ -86,23 +86,34 @@
       </div>
 
     </div>
-  <div id="reviews">
 
-    <% if @van.reviews.blank? %>
-      <h2>Be the first to leave a review for <%= @van.title %></h2>
-    <% else %>
-      <% @van.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
+  <div class="reviews-container">
+    <div id="reviews">
+
+      <% if @van.reviews.blank? %>
+        <h2 class="border-bottom-reviews">
+          Be the first to leave a review for <%= @van.title %>
+        </h2>
+
+      <% else %>
+        <h2 class="border-bottom-reviews">
+          <%= pluralize @van.reviews.size, "Review" %>
+        </h2>
+
+        <% @van.reviews.each do |review| %>
+          <div class="border-bottom-reviews">
+            <%= render 'reviews/show', review: review %>
+          </div>
+        <% end %>
+
       <% end %>
-    <% end %>
+    </div>
 
-
+    <div id="review-form">
+      <%= render 'reviews/form', van: @van, review: @review %>
+    </div>
   </div>
 
-  <div>
-    <%= render 'reviews/form', van: @van, review: @review %>
-
-  </div>
   </div>
 
 </div>
