@@ -1,12 +1,80 @@
-<h1>Confirm your booking</h1>
+<div class="van-outer-box">
 
-<h2>Details:</h2>
+  <div class="van-title">
+    <div>
+      <h1 id="van-title"><%= @van.title %></h1>
+      <h2 id="van-description">"<%= @van.description %>"</h2>
+    </div>
+    <div>
+      <i class="fas fa-user-circle" id="renter-name" style="font-size: 33px;"></i>
+      <p><%= @van.user.first_name %></p>
+    </div>
+  </div>
 
-<p>Van: <%= @booking.van.title %></p>
-<p>Brand: <%= @booking.van.brand %></p>
-<p>Seats: <%= @booking.van.seats %></p>
-<p>Owner: <%= @booking.van.user.first_name %></p>
-<p>Price: <%= @booking.van.price_per_day %></p>
+  <div class="van-info-box">
 
-<%= link_to "Confirm Booking", van_bookings_path(@booking.van_id), class: "xl-bttn",  method: :post %>
+   <div class="info-div">
+     <div class="icon">
+       <i class="fas fa-search-location"></i>
+     </div>
+     <div><%= @van.location.split.last.upcase %></div>
+   </div>
 
+   <div class="info-div">
+     <div class="icon">
+       <i class="fas fa-users"></i>
+     </div>
+     <div><%= @van.seats %></div>
+   </div>
+   <div class="info-div">
+     <div class="icon">
+       <i class="fas fa-tag"></i>
+     </div>
+     <div>
+       €
+       <%= @van.price_per_day %><br>
+     </div>
+   </div>
+
+   <div class="info-div">
+     <div class="icon">
+       <i class="fas fa-car"></i>
+     </div>
+     <div><%= @van.brand.upcase %></div>
+   </div>
+
+   <div class="info-div">
+     <div class="icon">
+       <i class="fas fa-question"></i>
+     </div>
+     <div><%= @van.category.split.first.upcase %></div>
+   </div>
+
+
+
+   <div class="info-div">
+     <div class="icon">
+       <i class="far fa-comment"></i>
+     </div>
+     <div><%= @van.reviews.size %></div>
+   </div>
+
+
+ </div>
+
+  <div id="book-bttn-div">
+    <div class="back-bttn-div">
+      <%= link_to "BACK", van_path(@van.id), class: "back-bttn"  %>
+    </div>
+    <div class="book-bttn">
+      <!-- GOD THIS IS SUCH BAD CODE, i hardcoded a style attribute to fix text color and text-decoration -->
+      <!-- (thomas) -->
+      <%= link_to "CONFIRM", van_bookings_path(@booking.van_id), style: "color: white; text-decoration: none;",  method: :post %>
+    </div>
+  </div>
+</div>
+
+  <div class="img-box" style="background-image: url(<%= cl_image_path @van.photo %>)">
+  </div>
+
+</div>
