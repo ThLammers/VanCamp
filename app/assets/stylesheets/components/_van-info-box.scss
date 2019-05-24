@@ -11,7 +11,7 @@
 .van-info-box {
   height: 300px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 10px;
   // one line option:
@@ -36,12 +36,15 @@
   background-size: cover;
 }
 
-.info {
+.info-div {
+  background-color: #343a401f;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  margin: 12px;
 
 }
 
@@ -67,24 +70,26 @@
 
 
 .van-title {
-  color: #2d2d27;
+  color: #000000cf;
   text-align: center;
   margin-bottom: 10px;
   font-family: 'Raleway', sans-serif;
   text-align: left;
   padding-left: 17px;
   padding-top: 15px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
 #van-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 30px;
-  margin-top: 10px;
+  font-size: 40px;
+  margin-top: 11px;
+  color: #000000cf;
   font-weight: 700;
   text-align: left;
-  padding-left: 17px;
 }
 
 #van-description {
@@ -94,7 +99,7 @@
   font-weight: lighter;
   color: black;
   text-align: left;
-  padding-left: 17px;
+  padding-left: 3px;
 }
 
 // .van-banner {
