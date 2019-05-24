@@ -1,7 +1,15 @@
 #map {
   position: sticky;
-  top: 80px;
+  top: 0;
   box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.22);
-  border: 2px solid #0d0d0b;
+  border: 0px solid #0d0d0b;
   border-radius: 12px 0px 0px 12px;;
+  height:100hv;
+}
+
+//#hiding input in map
+
+.mapboxgl-ctrl-top-right{
+  opacity:0;
+  visibility: collapse;
 }

@@ -29,6 +29,7 @@ class VansController < ApplicationController
     @booking.user = current_user
     @booking.van = @van
     authorize @booking
+    @review = Review.new
   end
 
   def new

@@ -1,0 +1,19 @@
+<div>
+  <div id="review-user">
+    <h6 id="review-user-icon"><i class="fas fa-user"></i></h6>
+
+    <div id="review-user-info">
+      <% if review.user.present? %>
+        <em><%= review.user.first_name.capitalize %></em>
+      <% else %>
+        <em>Unknown van lover</em>
+      <% end %>
+      <p id="review-date">
+        <%= review.created_at.strftime("%B #{review.created_at.day.ordinalize}, %Y")%>
+      </p>
+    </div>
+  </div>
+
+  <div>"<%= review.content %>"</div>
+
+</div>

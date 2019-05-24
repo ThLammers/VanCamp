@@ -1,5 +1,4 @@
-import mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import mapboxgl from 'mapbox-gl'; import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {

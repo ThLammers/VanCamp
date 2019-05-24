@@ -1,64 +1,40 @@
 
-  <!-- <div class="van-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url(<%#= cl_image_path @van.photo %>)"> -->
 
+<div class="main-show-container" style="background-image: linear-gradient(rgba(111,111,111,0.3),rgba(11,11,11,0.1)), url(<%= cl_image_path @van.photo, transformation: { effect: "blur:300" } %>); background-size: cover">
 
-      <%#= cl_image_tag @van.photo, class: "van-banner-photo"%>
-  <!-- </div> -->
-
-<div class="main-show-container" style="background-image: url(<%= cl_image_path @van.photo, opacity: 40 %>); background-size: cover">
   <div class="show-container">
-
-    <div class="back-bttn-div">
-        <%= link_to "Back", vans_path, class: "back-bttn"  %>
-    </div>
 
     <div class="huge-info-card">
 
      <div class="van-outer-box">
 
         <div class="van-title">
-          <h1 id="van-title"><%= @van.title %></h1>
-          <h2 id="van-description">"<%= @van.description %>"</h2>
+          <div>
+            <h1 id="van-title"><%= @van.title %></h1>
+            <h2 id="van-description">"<%= @van.description %>"</h2>
+          </div>
+          <div>
+            <i class="fas fa-user-circle" id="renter-name" style="font-size: 33px;"></i>
+            <p><%= @van.user.first_name %></p>
+          </div>
         </div>
 
         <div class="van-info-box">
 
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-search-location"></i>
            </div>
            <div><%= @van.location.split.last.upcase %></div>
          </div>
 
-         <div class="info">
-           <div class="icon">
-             <i class="fas fa-car"></i>
-           </div>
-           <div><%= @van.brand.upcase %></div>
-         </div>
-
-         <div class="info">
-           <div class="icon">
-             <i class="fas fa-question"></i>
-           </div>
-           <div><%= @van.category.upcase %></div>
-         </div>
-
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-users"></i>
            </div>
            <div><%= @van.seats %></div>
          </div>
-
-         <div class="info">
-           <div class="icon">
-             <i class="far fa-user"></i>
-           </div>
-           <div><%= @van.user.first_name.upcase %></div>
-         </div>
-
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-tag"></i>
            </div>
@@ -67,11 +43,39 @@
              <%= @van.price_per_day %><br>
            </div>
          </div>
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="fas fa-car"></i>
+           </div>
+           <div><%= @van.brand.upcase %></div>
+         </div>
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="fas fa-question"></i>
+           </div>
+           <div><%= @van.category.split.first.upcase %></div>
+         </div>
+
+
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="far fa-comment"></i>
+           </div>
+           <div><%= @van.reviews.size %></div>
+         </div>
+
+
        </div>
 
          <div id="book-bttn-div">
+          <div class="back-bttn-div">
+                <%= link_to "BACK", vans_path, class: "back-bttn"  %>
+            </div>
             <a class="book-bttn" data-toggle="modal" data-target="#confirmBookingModal">BOOK</a>
-            <%#= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
+
          </div>
       </div>
 
@@ -79,7 +83,36 @@
       </div>
 
     </div>
+
+  <div class="reviews-container">
+    <div id="reviews">
+
+      <% if @van.reviews.blank? %>
+        <h2 class="border-bottom-reviews">
+          Be the first to leave a review for <%= @van.title %>
+        </h2>
+
+      <% else %>
+        <h2 class="border-bottom-reviews">
+          <%= pluralize @van.reviews.size, "Review" %>
+        </h2>
+
+        <% @van.reviews.each do |review| %>
+          <div class="border-bottom-reviews">
+            <%= render 'reviews/show', review: review %>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+
+    <div id="review-form">
+      <%= render 'reviews/form', van: @van, review: @review %>
+    </div>
   </div>
+
+  </div>
+
 </div>
 
 

@@ -1,34 +1,22 @@
+
 .huge-info-card {
   display: grid;
   height: 80%;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 50% 50%;
   width: 100%;
   margin: 0px auto;
   border-radius: 12px;
-  border: 2px solid black;
 }
 
 .van-info-box {
+  height: 220px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 10px;
-  // one line option:
-  // height: 25vh;
-  // width: 20%;
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-items: stretch;
-  // justify-content: space-around;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
 }
 
 .van-outer-box {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  // position: absolute;
-  left:0;
-  right:0;
-  width: 100%;
   background-color: white;
   padding: 10px;
   font-family: 'Roboto', sans-serif;
@@ -41,21 +29,25 @@
   background-size: cover;
 }
 
-.info {
+.info-div {
+  background-color: #343a401f;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  margin: 12px;
 
 }
 
 .icon {
-  font-size: 2.5em;
-  color: #e4ae89;
+  font-size: 22px;
+  color: #2d2d27;
 }
 
 .back-bttn-div {
+  display: flex;
   margin: 0 0 0 auto;
   padding: 0 0 20px 0;
 }
@@ -66,19 +58,32 @@
   justify-content: space-around;
   text-align: center;
   margin-top: 10px;
+  color: white;
+
 }
 
 
 .van-title {
-  color: #e79e3c;
+  color: #000000cf;
   text-align: center;
   margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  padding-left: 17px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 #van-title {
-  font-family: 'Squada One', serif;
-  font-size: 3.5em;
-  margin-top: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  margin-top: 11px;
+  color: #000000cf;
+  font-weight: 700;
+  text-align: left;
 }
 
 #van-description {
@@ -87,6 +92,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   color: black;
+  text-align: left;
+  padding-left: 3px;
 }
 
 // .van-banner {

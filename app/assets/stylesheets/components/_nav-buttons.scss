@@ -136,47 +136,48 @@
 }
 
 .book-bttn {
-  // padding: 10px;
-  border: 1px solid #e79e3c;
-  background-color: #e79e3c;
-  text-decoration: none;
-  width: 100%;
-  font-family: 'Squada One', sans-serif;
-  font-size: 23px;
-  color: black;
-  border-radius: 12px;
+  align-items: center;
+  background-color: #5c7658;
+  width: 84%;
+  height: 50px;
+  margin-left: 15px;
+  margin-right: 12px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 7px;
   letter-spacing: 2px;
-  padding-top: 5px;
+  padding: 12px;
+  margin-bottom: 12px;
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+
 }
 
 .book-bttn:hover {
-  border: 1px solid #e79e3c;
-  text-decoration: none;
-  background-color: white;
-  color: #e79e3c;
-  width: 100%;
+  background-color: #226b80;
 }
 
 .back-bttn {
-  padding: 10px;
+  background-color: #383838;
   text-decoration: none;
-  border: 1px solid #e79e3c;
-  background-color: #e79e3c;
-  width: 30px;
-  height: 20px;
-  color: black;
-  border-radius: 12px;
-  font-family: 'Squada One', sans-serif;
-  font-size: 23px;
+  /* width: 93%; */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  border-radius: 7px;
+  letter-spacing: 2px;
+  padding: 12px 33px 12px 33px;
+  margin-bottom: 12px;
+  margin-top: 22px;
+  margin-left: 12px;
 }
 
 .back-bttn:hover {
+  background-color: #ea5b2e;
   text-decoration: none;
-  border: 1px solid #e79e3c;
-  background-color: white;
-  color: #e79e3c;
-  width: 30px;
-  height: 20px;
-  transform: none;
+  color: white;
 }
 
