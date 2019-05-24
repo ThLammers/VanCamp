@@ -1,14 +1,8 @@
 
-<div class="main-show-container" style="background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.8)), url(<%= cl_image_path @van.photo, transformation: { effect: "blur:150" } %>); background-size: cover">
+
+<div class="main-show-container" style="background-image: linear-gradient(rgba(111,111,111,0.3),rgba(11,11,11,0.1)), url(<%= cl_image_path @van.photo, transformation: { effect: "blur:300" } %>); background-size: cover">
 
   <div class="show-container">
-
-<!-- BACKBUTTON -->
-
-    <!-- <div class="back-bttn-div">
-        <%#= link_to "Back", vans_path, class: "back-bttn"  %>
-    </div> -->
-
 
     <div class="huge-info-card">
 
@@ -68,7 +62,7 @@
 
          <div class="info-div">
            <div class="icon">
-             <i class="fas fa-star"></i>
+             <i class="far fa-comment"></i>
            </div>
            <div><%= @van.reviews.size %></div>
          </div>
@@ -77,8 +71,11 @@
        </div>
 
          <div id="book-bttn-div">
+          <div class="back-bttn-div">
+                <%= link_to "BACK", vans_path, class: "back-bttn"  %>
+            </div>
             <a class="book-bttn" data-toggle="modal" data-target="#confirmBookingModal">BOOK</a>
-            <%#= link_to "Book", new_van_booking_path(@van), class: "book-bttn"  %>
+
          </div>
       </div>
 
