@@ -1,23 +1,28 @@
 .navbar-container {
+  // display: flex;
+  // flex-direction: row;
+  // position: relative;
+  // justify-content: space-around;
+  // position: fixed;
   display: flex;
   flex-direction: row;
   position: relative;
-  justify-content: space-around;
+  /* justify-content: center; */
+  z-index: 40000;
+  position: fixed;
+
 }
 
 .navbar-wrapper {
+  padding: 15px;
   border-bottom: 2px solid #0d0d0b;
-  border-left: 2px solid #0d0d0b;
-  border-right: 2px solid #0d0d0b;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: white;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-  width: 76vw;
+  width: 100vw;
   height: 51px;
   box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.42);
   position: absolute;
