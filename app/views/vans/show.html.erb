@@ -15,48 +15,32 @@
      <div class="van-outer-box">
 
         <div class="van-title">
-          <h1 id="van-title"><%= @van.title %></h1>
-          <h2 id="van-description">"<%= @van.description %>"</h2>
+          <div>
+            <h1 id="van-title"><%= @van.title %></h1>
+            <h2 id="van-description">"<%= @van.description %>"</h2>
+          </div>
+          <div>
+            <i class="fas fa-user-circle" id="renter-name" style="font-size: 33px;"></i>
+            <p><%= @van.user.first_name %></p>
+          </div>
         </div>
 
         <div class="van-info-box">
 
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-search-location"></i>
            </div>
            <div><%= @van.location.split.last.upcase %></div>
          </div>
 
-         <div class="info">
-           <div class="icon">
-             <i class="fas fa-car"></i>
-           </div>
-           <div><%= @van.brand.upcase %></div>
-         </div>
-
-         <div class="info">
-           <div class="icon">
-             <i class="fas fa-question"></i>
-           </div>
-           <div><%= @van.category.upcase %></div>
-         </div>
-
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-users"></i>
            </div>
            <div><%= @van.seats %></div>
          </div>
-
-         <div class="info">
-           <div class="icon">
-             <i class="far fa-user"></i>
-           </div>
-           <div><%= @van.user.first_name.upcase %></div>
-         </div>
-
-         <div class="info">
+         <div class="info-div">
            <div class="icon">
              <i class="fas fa-tag"></i>
            </div>
@@ -65,6 +49,31 @@
              <%= @van.price_per_day %><br>
            </div>
          </div>
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="fas fa-car"></i>
+           </div>
+           <div><%= @van.brand.upcase %></div>
+         </div>
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="fas fa-question"></i>
+           </div>
+           <div><%= @van.category.split.first.upcase %></div>
+         </div>
+
+
+
+         <div class="info-div">
+           <div class="icon">
+             <i class="fas fa-star"></i>
+           </div>
+           <div><%= @van.reviews.size %></div>
+         </div>
+
+
        </div>
 
          <div id="book-bttn-div">
