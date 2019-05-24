@@ -1,4 +1,11 @@
-<%= simple_form_for([ van, review ], remote: true) do |form| %>
-  <%= form.input :content, as: :text, label: false, placeholder: "Add your review here!" %>
-  <%= form.button :submit %>
-<% end %>
+
+  <%= simple_form_for([ van, review ], remote: true) do |form| %>
+    <div id="review-form">
+      <div id="review-content-box">
+        <%= form.input :content, as: :text, label: false, placeholder: "Add your review here!" %>
+      </div>
+      <div>
+        <%= form.button :submit, id: "submit-review-button"%>
+      </div>
+    </div>
+  <% end %>

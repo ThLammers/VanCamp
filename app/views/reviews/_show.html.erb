@@ -4,9 +4,9 @@
 
     <div id="review-user-info">
       <% if review.user.present? %>
-        <em><%= review.user.first_name.capitalize %></em>
+        <strong><%= review.user.first_name.capitalize %></strong>
       <% else %>
-        <em>Unknown van lover</em>
+        <strong>Unknown van lover</strong>
       <% end %>
       <p id="review-date">
         <%= review.created_at.strftime("%B #{review.created_at.day.ordinalize}, %Y")%>
