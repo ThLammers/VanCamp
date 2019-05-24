@@ -4,7 +4,7 @@
 
 <!-- SEARCH INPUT FIELD  -->
 <%= form_tag("/vans", {:method => 'get', :class => 'search-form'}) do %>
-  <input class='search-input' name="location" id="address-input" placeholder="  Where are you going?" />
+  <input class='search-input' name="location" id="address-input" placeholder="Where are you going?" />
   <!-- SAVE SYNTAX FOR DROPDOWN IN CASE WE DO SELECT2 -->
   <%#= select_tag "location", raw("<option>Berlin</option><option>Paris</option><option>Toronto</option><option>Tokyo</option><option>London</option>"), disabled: false, prompt: ' LOCATION', class: 'large-bttn' %>
   <!-- SAVE GO BUTTON -->
