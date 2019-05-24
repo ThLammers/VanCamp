@@ -80,6 +80,19 @@
 
     </div>
   </div>
+
+  <div class="reviews">
+
+    <% if @van.reviews.blank? %>
+      <h2>Be the first to leave a review for <%= @van.title %></h2>
+    <% else %>
+      <% @van.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+
+  </div>
+
 </div>
 
 
