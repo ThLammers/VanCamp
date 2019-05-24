@@ -1,4 +1,4 @@
 <%= simple_form_for([ van, review ], remote: true) do |form| %>
-  <%= form.input :content, as: :text %>
+  <%= form.input :content, as: :text, label: false, placeholder: "Add your review here!" %>
   <%= form.button :submit %>
 <% end %>
