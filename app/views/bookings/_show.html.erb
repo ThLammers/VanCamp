@@ -3,6 +3,6 @@
   <ul class="booking-details-modal">
     <li>Van: <%= booking.van.title %></li>
     <li>Price per Day: €<%= booking.van.price_per_day %></li>
-    <li>Booked at: <%= booking.created_at %></li>
+    <li>Booked at: <%= booking.created_at.strftime("%B #{booking.created_at.day.ordinalize}, %Y") %></li>
   </ul>
 </div>
