@@ -45,7 +45,7 @@ class VansController < ApplicationController
     if @van.save
       redirect_to @van
     else
-      render :new
+      redirect_to root_path
     end
   end
 

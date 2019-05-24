@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>TODO</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
 
-<!-- ## main-nav-bar -->
-<% if user_signed_in? %>
-  <div class="navbar-container">
-    <div class= "navbar-wrapper">
-      <div class="navbar-float-left">
-        <%= link_to "", root_path, class: "small-logo"  %>
-      </div>
-      <div class="rent-bttn">
-            <%= link_to "LIST YOUR VAN", new_van_path %>
+<body>
+  <!-- ## main-nav-bar -->
+  <% if user_signed_in? %>
+    <div class="navbar-container">
+
+      <div class= "navbar-wrapper">
+        <div class="navbar-float-left">
+          <%= link_to "", root_path, class: "small-logo"  %>
+        </div>
+        <div class="rent-bttn">
+          <%#= link_to "LIST YOUR VAN", new_van_path %>
+          <a class="xxl-bttn" href="" data-toggle="modal" data-target="#createVanModal">LIST YOUR VAN</a>
+        </div>
+
+        <div class="navbar-float-right">
+          <div class="small-bttn">
+            <%= link_to current_user.first_name.upcase, user_bookings_path(current_user.id) %>
           </div>
-      <div class="navbar-float-right">
-
-        <div class="small-bttn">
-          <%= link_to current_user.first_name.upcase, user_bookings_path(current_user.id) %>
-        </div>
-        <div class="profile-badge">
-        </div>
-        <div class="small-bttn" style="margin-left: -2px;">
-          <%= link_to "LOG OUT", destroy_user_session_path(@user), method: :delete  %>
+          <div class="profile-badge">
+          </div>
+          <div class="small-bttn" style="margin-left: -2px;">
+            <%= link_to "LOG OUT", destroy_user_session_path(@user), method: :delete  %>
+          </div>
         </div>
       </div>
+
     </div>
-  </div>
-<% end %>
+  <% end %>
 
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
 
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
+  <!-- MODAL RENDERING -->
+  <%= render partial: 'vans/create_van_modal', locals: { van: @van } %>
+</body>
 </html>

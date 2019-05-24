@@ -1,0 +1,43 @@
+<%= simple_form_for(Van.new, html: { id: "create-van-form" }) do |f| %>
+  <h1>LIST YOUR VAN</h1>
+  <!-- <p class="text-center center text-on-modal" >MEMBERS ONLY</p> -->
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                label: false,
+                placeholder: "VAN TITLE" %>
+  <%= f.input   :brand,
+                label: false,
+                placeholder: "BRAND" %>
+  <%= f.input   :location,
+                label: false,
+                placeholder: "HOMETOWN" %>
+  <%= f.input   :category,
+                label: false,
+                :collection => ['ROAD TRIP', 'FAMILY FRIENDLY', 'LUXURY', 'SPECIAL'],
+                # :selected => "SELECT CATEGORY",
+                # input_html: { "data-placeholder" => "..." },
+                # data: {placeholder:'Select user...'}
+                prompt: 'SELECT CATEGORY' %>
+  <%= f.input   :price_per_day,
+                label: false,
+                placeholder: 'PRICE PER DAY (€)' %>
+  <%= f.input   :seats,
+                :collection => %w[1 2 3 4 5+],
+                label: false,
+                prompt: 'NUMBER OF SEATS' %>
+  <%= f.text_area :description,
+                label: false,
+                placeholder: "DESCRIBE YOUR AMAZING VAN" %>
+  <%= f.input :photo, label: false, value: "UPLOAD" %>
+  <%= f.input :photo_cache, as: :hidden %>
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "CREATE VAN", class: "xl-bttn" %>
+    <!-- data-toggle="modal" data-target="#signUpModal" -->
+  </div>
+<% end %>

@@ -3,18 +3,15 @@
   border: 5px solid black;
   padding: 10px;
 }
-
 .vancamp-modal h1 {
   font-family: 'Squada One', cursive;
   text-align: center;
   padding-bottom: 27px;
 }
-
 .vancamp-modal label {
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+  text-align: left;
 }
-
 .form-inputs {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -26,18 +23,13 @@
   margin: 0;
   color: black;
 }
-// .vancamp-modal input {
-//   font-family: 'Roboto', sans-serif;
-//   font-weight: bold;
-//   // text-align: center;
-// }
 .vancamp-modal input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #909090;
   font-weight: normal;
 }
 
 // ADD STYLE TO BOOTSTRAP MODAL DEFAULT
-.vancamp-modal .form-control {
+.vancamp-modal .form-control, #van_description {
   border: 3px solid black;
   border-radius: 5px;
 }
@@ -52,10 +44,16 @@
 #sign-in-modal .vancamp-modal .modal-body {
   padding: 47px;
 }
+//---
 #sign-up-modal {
   max-width: 480px;
 }
 #sign-up-modal .vancamp-modal .modal-body {
+  padding: 56px;
+}
+//---
+#create_van_modal {
+  max-width: 480px;
   padding: 56px;
 }
 
@@ -64,9 +62,6 @@
   font-family: 'Squada One', cursive;
   font-size: 20px;
   letter-spacing: 3px;
-}
-.form-check-input {
-
 }
 // .text-on-modal:hover {
 //   color: #ffae2e;
@@ -78,13 +73,11 @@
 .modal .xl-bttn {
   margin-top: 40px;
 }
-// ANOTHER BUTTON COLOR MAYBE? (thomas)
-// .modal .xl-bttn {
-//   background-color: #dbbda8;
-// }
-// .modal .xl-bttn:hover {
-//   background-color: #e4ae89;
-// }
 
+// VAN CREATION MODAL
+#van_description {
+  width: 100%;
+  padding: 6.75px 13.5px;
+}
 
 
