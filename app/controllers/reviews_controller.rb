@@ -6,9 +6,15 @@ class ReviewsController < ApplicationController
     @review.van = @van
     authorize @review
     if @review.save
-      redirect_to van_path(@van)
+      respond_to do |format|
+        format.html { redirect_to @van }
+        format.js
+      end
     else
-      render 'vans/show'
+      respond_to do |format|
+        format.html { render 'vans/show' }
+        format.js
+      end
     end
   end
 
