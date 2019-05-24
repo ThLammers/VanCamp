@@ -1,13 +1,15 @@
 .main-container {
   display: flex;
+  background-color:white;
+
 }
 
 .van-card-container {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 80px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
   flex-grow: 1;
   grid-gap: 20px;
   width: 60%;
@@ -35,26 +37,29 @@
   transition: 0.5s;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   font-size: 16px;
   font-weight: bold;
   font-size: 12px;
   opacity: 1;
   border-radius: 12px;
   border: 0px solid black;
-  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  height: 220px;
 
 }
 
 .title-in-card {
-  font-size: 24px;
-  // overflow: hidden;
+  font-size: 18px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: 'Squada One', cursive;
+  font-family: 'raleway';
   padding-left:10px;
-  padding-top:11px;
+  padding-top:15px;
+  padding-bottom:2px;
   margin:0!important;
+  font-weight:700;
 
 }
 
@@ -82,9 +87,9 @@
 .price{
   // padding:0!important;
   // margin:0!important;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 15px;
+  font-family: 'raleway', medium;
+  font-weight: 500;
+  font-size: 11px;
   // letter-spacing:1px;
   padding-left:10px;
   padding-bottom:15px;
@@ -111,5 +116,17 @@
 #renter-name {
   padding-right: 40px;
   margin-top: 30px;
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
