@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 2019_05_24_104947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_per_day"
+    t.string "photo"
     t.float "latitude"
     t.float "longitude"
-    t.string "photo"
     t.index ["user_id"], name: "index_vans_on_user_id"
   end
 

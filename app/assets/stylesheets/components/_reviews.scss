@@ -1,0 +1,35 @@
+.reviews-container {
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.border-bottom-reviews {
+  border-bottom: 1px solid #e0dede;
+  margin-top: 0;
+  padding: 15px 0;
+}
+
+#review-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#review-user-info {
+  margin-left: 30px;
+}
+
+#review-date {
+  margin-bottom: 0;
+  font-size: 0.7em;
+}
+
+#review-user-icon {
+  margin-bottom: 0;
+  font-size: 2.1em;
+}
