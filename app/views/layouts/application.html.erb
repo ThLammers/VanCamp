@@ -20,7 +20,8 @@
           <%= link_to "", root_path, class: "small-logo"  %>
         </div>
         <div class="rent-bttn">
-          <%= link_to "LIST YOUR VAN", new_van_path %>
+          <%#= link_to "LIST YOUR VAN", new_van_path %>
+          <a class="xxl-bttn" href="" data-toggle="modal" data-target="#createVanModal">LIST YOUR VAN</a>
         </div>
 
         <div class="navbar-float-right">
@@ -48,5 +49,8 @@
   <%= yield %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
+
+  <!-- MODAL RENDERING -->
+  <%= render partial: 'vans/create_van_modal', locals: { van: @van } %>
 </body>
 </html>
