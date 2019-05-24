@@ -1,8 +1,30 @@
 <div class="vancamp-modal-container">
   <h1>Booking Details</h1>
-  <ul class="booking-details-modal">
-    <li>Van: <%= booking.van.title %></li>
-    <li>Price per Day: €<%= booking.van.price_per_day %></li>
-    <li>Booked at: <%= booking.created_at.strftime("%B #{booking.created_at.day.ordinalize}, %Y") %></li>
-  </ul>
+  <table class="table">
+    <tr>
+      <th>VAN</th>
+      <td><%= booking.van.title %></td>
+    </tr>
+    <tr>
+      <th>OWNER</th>
+      <td><%= "#{booking.van.user.first_name} #{booking.van.user.last_name}"%></td>
+    </tr>
+    <tr>
+      <th>CONTACT</th>
+      <td><%= booking.van.user.email %></td>
+    </tr>
+    <tr>
+      <th>PRICE</th>
+      <td>€<%= booking.van.price_per_day %> / day</td>
+    </tr>
+    <tr>
+      <th>BOOKED AT</th>
+      <td><%= booking.created_at.strftime("%B #{booking.created_at.day.ordinalize}, %Y") %></td>
+    </tr>
+  </table>
+
+  <div class="back-bttn-div text-right">
+    <%= link_to "BACK", vans_path, class: "back-bttn"  %>
+  </div>
+
 </div>
