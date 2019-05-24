@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :vans do
     resources :bookings, except: [:index, :show, :destroy]
+    resources :reviews, only: :create
   end
 end
