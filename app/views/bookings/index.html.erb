@@ -1,3 +1,9 @@
+<!-- PREDENDER A MODAL FOR ALL BOOKINGS -->
+<% @bookings.each do |booking| %>
+  <%= booking.van.title %> Price: <%= booking.van.price_per_day %>
+  <%= render partial: 'booking_details_modal', locals: { booking: booking } %>
+<% end %>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 
@@ -9,31 +15,84 @@
       <div class="info">
         <h1>THILO LAMMERS</h1>
         <h2>From Berlin</h2>
-        <p>I have a Finance/Accounting background and are here to learn a new skills. After the course I would love to travel Europe and freelane from my sprinter.</p>
+        <p style="margin-right: 30px">I have a Finance/Accounting background and are here to learn a new skills. After the course I would love to travel Europe and freelane from my sprinter.</p><br>
       </div>
+      <br>
     </div>
     <div class="booking-title">
-    BOOKINGS
+    <h2>BOOKINGS</h2>
     </div>
-      <ul class="bookings-list" style="list-style: none;">
+      <div id="kill-margin" class="reviews-container" style="list-style: none;">
         <% @bookings.each do |booking| %>
           <div class="card-booking">
-          <img src="https://i.ibb.co/qknrh25/vasilios-muselimis-745027-unsplash.jpg">
-          <div class="card-booking-infos">
-          <h2><%= booking.van.title %></h2>
-          <p><strong>Price:</strong> <%= booking.van.price_per_day %></p>
-          <%= link_to "More Info", booking_path(booking)  %>
-          <%= link_to "Cancel Booking", delete_booking_path(booking), method: :delete   %>
-          </div>
+            <img src="<%= booking.van.photo.url %>">
+            <div class="card-booking-infos">
+              <div class="left-content">
+                <h2 id="booking-title"><%= booking.van.title %></h2>
+                <br>
+                <h2>Price: € <%= booking.van.price_per_day %>/ day</h2>
+              </div>
+              <div class="right-content">
+                <a id="icon-search" href="" data-toggle="modal" data-booking-id="<%= booking.id %>" data-target="<%= "#bookingDetailsModal#{booking.id}" %>"><i class="fas fa-search"></i></a>
+                <%#= link_to "More Info", booking_path(booking)  %>
+                <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, delete_booking_path(booking), method: :delete, id: "icon-trash"  %>
+              </div>
+            </div>
           </div>
         <% end %>
-      </ul>
+      </div>
     </div>
 </div>
 
-<!-- PREDENDER A MODAL FOR ALL BOOKINGS -->
-<% @bookings.each do |booking| %>
-  <%= booking.van.title %> Price: <%= booking.van.price_per_day %>
-  <a class="xl-bttn" data-toggle="modal" data-booking-id="<%= booking.id %>" data-target="<%= "#bookingDetailsModal#{booking.id}" %>">Details</a>
-  <%= render partial: 'booking_details_modal', locals: { booking: booking } %>
-<% end %>
+<style>
+
+#booking-title {
+  font-size: 1.3em;
+}
+#icon-search, #icon-trash {
+  font-size: 24px;
+  line-height: 2.5;
+  margin: 10px;
+  color: #5C7657;
+
+}
+#icon-search:hover, #icon-trash:hover {
+  color: #226A80;
+}
+#kill-margin {
+  margin-top: 0;
+  padding-top: 10px;
+}
+.booking-wrapper {
+  max-width: 600px;
+  height: 80%;
+}
+
+.card-booking-container {
+  margin-left: 34px;
+  margin-right: 44px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto;
+}
+.card-booking-infos {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+}
+.card-booking {
+  height: 125px;
+  /*min-width: 400px;*/
+  margin: 10px;
+  box-shadow: 0 0 3px black;
+  /*border: 1px solid black;*/
+}
+
+.card-booking-infos {
+  padding: 30px;
+}
+.left-content {
+  line-height: 1;
+}
+</style>
+
