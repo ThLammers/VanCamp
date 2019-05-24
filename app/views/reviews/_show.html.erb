@@ -1,3 +1,12 @@
 <div>
-  <%= review.content %>
+  <h6><i class="fas fa-user"></i>
+    <% if review.user.present? %>
+      <em><%= review.user.first_name.capitalize %></em>
+    <% else %>
+      <em>Unknown van lover</em>
+    <% end %>
+  </h6>
+
+  <div>"<%= review.content %>"</div>
+
 </div>

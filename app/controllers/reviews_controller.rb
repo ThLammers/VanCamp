@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @van = Van.find(params[:van_id])
     @review = Review.new(review_params)
     @review.van = @van
+    @review.user = current_user
     authorize @review
     if @review.save
       respond_to do |format|
