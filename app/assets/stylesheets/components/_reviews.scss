@@ -1,3 +1,13 @@
+a {
+  color: #303030;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #303030;
+  text-decoration: none;
+}
+
 .reviews-container {
   margin-top: 30px;
   background-color: white;
@@ -6,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  color: #303030;
 }
 
 .border-bottom-reviews {
@@ -32,4 +43,5 @@
 #review-user-icon {
   margin-bottom: 0;
   font-size: 2.1em;
+  color: #5c7658;
 }

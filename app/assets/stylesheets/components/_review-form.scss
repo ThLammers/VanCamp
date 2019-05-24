@@ -1,0 +1,29 @@
+#review-form {
+  padding-top: 15px;
+}
+
+#submit-review-button {
+  padding: 0px;
+  background-color: #5c7658;
+  width: 100%;
+  height: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  border-radius: 7px;
+  letter-spacing: 2px;
+}
+
+#review-content-box {
+  height: 100%;
+  box-sizing: content-box;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgba(92, 118, 88, 0.5);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(92, 118, 88, 0.5)
+}

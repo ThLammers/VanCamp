@@ -61,10 +61,12 @@
 
 
          <div class="info-div">
-           <div class="icon">
-             <i class="far fa-comment"></i>
-           </div>
-           <div><%= @van.reviews.size %></div>
+          <a href="#reviews-title">
+             <div class="icon">
+               <i class="far fa-comment"></i>
+             </div>
+             <div><%= @van.reviews.size %></div>
+           </a>
          </div>
 
 
@@ -84,32 +86,34 @@
 
     </div>
 
-  <div class="reviews-container">
-    <div id="reviews">
+    <a name="reviews-title">
+      <div class="reviews-container">
+        <div id="reviews">
 
-      <% if @van.reviews.blank? %>
-        <h2 class="border-bottom-reviews">
-          Be the first to leave a review for <%= @van.title %>
-        </h2>
+          <% if @van.reviews.blank? %>
+            <h2 class="border-bottom-reviews" name="reviews-title">
+              Be the first to leave a review for <%= @van.title %>
+            </h2>
 
-      <% else %>
-        <h2 class="border-bottom-reviews">
-          <%= pluralize @van.reviews.size, "Review" %>
-        </h2>
+          <% else %>
+              <h2 class="border-bottom-reviews">
+                <%= pluralize @van.reviews.size, "Review" %>
+              </h2>
 
-        <% @van.reviews.each do |review| %>
-          <div class="border-bottom-reviews">
-            <%= render 'reviews/show', review: review %>
-          </div>
-        <% end %>
+            <% @van.reviews.each do |review| %>
+              <div class="border-bottom-reviews">
+                <%= render 'reviews/show', review: review %>
+              </div>
+            <% end %>
 
-      <% end %>
-    </div>
+          <% end %>
+        </div>
 
-    <div id="review-form">
-      <%= render 'reviews/form', van: @van, review: @review %>
-    </div>
-  </div>
+        <div id="review-form">
+          <%= render 'reviews/form', van: @van, review: @review %>
+        </div>
+      </div>
+    </a>
 
   </div>
 
