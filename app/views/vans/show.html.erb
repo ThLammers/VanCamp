@@ -27,7 +27,7 @@
            <div class="icon">
              <i class="fas fa-search-location"></i>
            </div>
-           <div><%= @van.location.split[-2]%> <%= @van.location.split[-1].upcase %></div>
+           <div><%= @van.location.split.last.upcase %></div>
          </div>
 
          <div class="info">
