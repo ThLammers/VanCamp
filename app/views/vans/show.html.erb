@@ -1,10 +1,4 @@
 
-  <!-- <div class="van-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url(<%#= cl_image_path @van.photo %>)"> -->
-
-
-      <%#= cl_image_tag @van.photo, class: "van-banner-photo"%>
-  <!-- </div> -->
-
 <div class="main-show-container" style="background-image: url(<%= cl_image_path @van.photo, opacity: 40 %>); background-size: cover">
   <div class="show-container">
 
@@ -90,6 +84,8 @@
         <%= render 'reviews/show', review: review %>
       <% end %>
     <% end %>
+
+    <%= render 'reviews/form', van: @van, review: @review %>
 
   </div>
 
